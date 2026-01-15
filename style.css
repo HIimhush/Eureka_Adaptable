@@ -256,7 +256,7 @@ h1 {
    ========================================= */
 
 .faq-page-main {
-    background-color: #f3f4f6;
+    background-color: #c7d7f6;
     /* Light gray background like image */
     padding: 80px 40px;
     min-height: 80vh;
@@ -513,7 +513,7 @@ h1 {
 }
 
 .login-logo-img {
-    width: 90px;
+    width: 120px;
     height: auto;
     margin-bottom: 10px;
 }
