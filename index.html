@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka | Retail Business Intelligence</title>
+    <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <p>Listo para tener tus ventas a solo un par de clicks? <a href="#contact-info"
+                style="font-weight: bold; text-decoration: underline; color: inherit; cursor: pointer;">Contactanos!</a>
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#top" style="display: flex; gap: 10px; text-decoration: none; align-items: center;">
+                    <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo">
+                    <span class="brand-name">EUREKA</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-overlay"></div>
+            <nav>
+                <ul>
+                    <li><a href="#funcionamiento">Funcionamiento</a></li>
+                    <li><a href="#why-eureka">Beneficios</a></li>
+                    <li><a href="#software-promotoria">Promotoría</a></li>
+                    <li><a href="#nuestros-servicios">Servicios</a></li>
+                    <li><a href="#contact-info">Contactos</a></li>
+                    <li class="mobile-nav-buttons">
+                        <a href="faq.html" class="btn-faq">FAQ</a>
+                        <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login-btn">
+                <a href="faq.html" class="btn-faq">FAQ</a>
+                <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-container">
+            <div class="hero-frame">
+                <div class="hero-inner">
+                    <div class="hero-content">
+                        <p class="hero-subtitle">CON INTELIGENCIA DE DATOS RETAIL</p>
+                        <h1>Incrementa tus ventas y mantén tus inventarios <span class="text-blue">sanos</span></h1>
+                        <p class="hero-description">
+                            La única plataforma que automatiza el análisis de ventas e inventarios de todas las cadenas
+                            comerciales y te proporciona insights accionables para tomar decisiones inteligentes.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="mailto:omar.tirado@eurekamx.com.mx" class="btn-white">Solicitar Demo</a>
+                            <a href="#contact-info" class="btn-transparent">Contactos</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="Recursos/Laptop_mockup.png" alt="Eureka App Devices">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- How it Works Section -->
+    <section id="funcionamiento" class="how-it-works">
+        <div class="hiw-container">
+            <h2 class="hiw-title">¿Cómo Funciona EUREKA?</h2>
+            <p class="hiw-subtitle">
+                Eureka conecta tus portales de autoservicio, automatiza la descarga de datos y los convierte en tableros
+                y apps para promotores que muestran, cada día, qué productos mover y en qué tienda actuar.
+            </p>
+
+            <div class="accordion-section">
+                <!-- Left Column: Accordion -->
+                <div class="accordion-container">
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            DESCARGA AUTOMATIZADA
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Eureka se conecta a tus <b><u>portales de autoservicio</u></b> y descarga de forma
+                                <b><u>automática ventas, inventarios y precios</u></b> de cada cadena.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            REPORTES E INDICADORES
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>La información se <b><u>estandariza</u></b> en un <b><u>formato único</u></b> y por medio
+                                de <b><u>algoritmos inteligentes</u></b> se generan <b><u>métricas, indicadores de
+                                        desempeño y sugerencias</u></b> de abastecimiento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            ACCESO A EUREKA
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Desde <b><u>cualquier dispositivo</u></b> conectado a internet <b><u>accesa</u></b> a la
+                                información de tus productos las <b><u>24 horas del día y los 365 días</u></b> del año
+                                mediante nuestra plataforma web.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="accordion-image">
+                    <img src="Recursos/Laptop_BI_Mokcup.png" alt="Eureka BI Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Eureka Section -->
+    <section id="why-eureka" class="why-eureka">
+        <div class="why-container">
+            <h2 class="why-title">¿POR QUÉ NECESITAS<br>EUREKA?</h2>
+            <h3 class="why-subtitle">Resultados Comprobados</h3>
+            <p class="why-description">
+                La Inteligencia de Negocios que proporciona Eureka actúa como un factor estratégico para que tu empresa
+                genere una ventaja competitiva real y medible.
+            </p>
+
+            <div class="why-grid">
+                <!-- Card 01 -->
+                <div class="why-card card-01">
+                    <div class="card-number">01</div>
+                    <h4>Incrementa ventas</h4>
+                    <p>con datos precisos</p>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="why-card card-02">
+                    <div class="card-number">02</div>
+                    <h4>Inventarios sanos</h4>
+                    <p>con control total</p>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="why-card card-03">
+                    <div class="card-number">03</div>
+                    <h4>Menos devoluciones</h4>
+                    <p>y mejor gestión</p>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="why-card card-04">
+                    <div class="card-number">04</div>
+                    <h4>Ahorra Tiempo</h4>
+                    <p>con automatización</p>
+                </div>
+
+                <!-- Card 05 (Full width) -->
+                <div class="why-card card-05">
+                    <div class="card-05-left">
+                        <div class="card-number">05</div>
+                    </div>
+                    <div class="card-05-right">
+                        <h4>Datos de ventas en<br>tiempo real</h4>
+                        <p>Obtén información actualizada de todas las cadenas comerciales: ventas diarias, inventarios,
+                            rotación de productos y tendencias de mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Promotoria Section -->
+    <section id="software-promotoria" class="promo-section">
+        <div class="promo-container">
+            <h2 class="promo-title">Software para Promotoría</h2>
+
+            <div class="promo-content">
+                <!-- Left: List (Desktop) -->
+                <div class="promo-list">
+                    <button class="promo-item active" data-title="Planificación de Rutas"
+                        data-desc="Optimiza las rutas de visita para maximizar la eficiencia de tu equipo de promotoría."
+                        data-img="Recursos/promo_rutas.png">
+                        Planificación de rutas
+                    </button>
+                    <button class="promo-item" data-title="Fotos de Anaqueles"
+                        data-desc="Captura y registra el estado de los anaqueles en cada tienda visitada."
+                        data-img="Recursos/promo_fotos.png">
+                        Fotos de Anaqueles
+                    </button>
+                    <button class="promo-item" data-title="Control de Inventarios"
+                        data-desc="Gestiona el control y conteo de inventarios en bodega y tiendas."
+                        data-img="Recursos/promo_inventarios.png">
+                        Control de inventarios
+                    </button>
+                    <button class="promo-item" data-title="Control de Lotes"
+                        data-desc="Rastrea y controla los lotes de productos para evitar vencimientos."
+                        data-img="Recursos/promo_lotes.png">
+                        Control de Lotes
+                    </button>
+                    <button class="promo-item" data-title="Seguimiento de Incidencias"
+                        data-desc="Registra y da seguimiento a incidencias en tiendas para resolver problemas rápidamente."
+                        data-img="Recursos/promo_incidencias.png">
+                        Seguimiento de incidencias
+                    </button>
+                    <button class="promo-item" data-title="Control de Entradas y Salidas"
+                        data-desc="Registra automáticamente las entradas y salidas de promotores en cada tienda visitada."
+                        data-img="Recursos/promo_entradas.png">
+                        Control de entradas y salidas
+                    </button>
+                    <button class="promo-item" data-title="Acceso por GPS"
+                        data-desc="La aplicación solo funciona cuando el promotor está físicamente dentro de la tienda."
+                        data-img="Recursos/promo_gps.png">
+                        Acceso por GPS
+                    </button>
+                    <button class="promo-item" data-title="Reportes Automatizados"
+                        data-desc="Genera reportes detallados automáticamente sin necesidad de Excel o trabajo manual."
+                        data-img="Recursos/promo_reportes.png">
+                        Reportes automatizados
+                    </button>
+                </div>
+
+                <!-- Mobile: Swipeable Carousel -->
+                <div class="promo-carousel-wrapper">
+                    <div class="promo-carousel" id="promo-carousel">
+                        <div class="promo-carousel-item active" data-index="0">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-0" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Planificación de Rutas</h3>
+                                    <p>Optimiza las rutas de visita para maximizar la eficiencia de tu equipo de promotoría.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="1">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-1" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Fotos de Anaqueles</h3>
+                                    <p>Captura y registra el estado de los anaqueles en cada tienda visitada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="2">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-2" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Control de Inventarios</h3>
+                                    <p>Gestiona el control y conteo de inventarios en bodega y tiendas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="3">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-3" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Control de Lotes</h3>
+                                    <p>Rastrea y controla los lotes de productos para evitar vencimientos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="4">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-4" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Seguimiento de Incidencias</h3>
+                                    <p>Registra y da seguimiento a incidencias en tiendas para resolver problemas rápidamente.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="5">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-5" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Control de Entradas y Salidas</h3>
+                                    <p>Registra automáticamente las entradas y salidas de promotores en cada tienda visitada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="6">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-6" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Acceso por GPS</h3>
+                                    <p>La aplicación solo funciona cuando el promotor está físicamente dentro de la tienda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-carousel-item" data-index="7">
+                            <div class="display-card">
+                                <div class="display-image-placeholder">
+                                    <img id="promo-display-img-7" src="" alt="Functionality Preview" style="display:none;">
+                                    <div class="placeholder-box"></div>
+                                </div>
+                                <div class="display-info">
+                                    <h3>Reportes Automatizados</h3>
+                                    <p>Genera reportes detallados automáticamente sin necesidad de Excel o trabajo manual.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-carousel-dots">
+                        <span class="carousel-dot active" data-index="0"></span>
+                        <span class="carousel-dot" data-index="1"></span>
+                        <span class="carousel-dot" data-index="2"></span>
+                        <span class="carousel-dot" data-index="3"></span>
+                        <span class="carousel-dot" data-index="4"></span>
+                        <span class="carousel-dot" data-index="5"></span>
+                        <span class="carousel-dot" data-index="6"></span>
+                        <span class="carousel-dot" data-index="7"></span>
+                    </div>
+                </div>
+
+                <!-- Right: Display (Desktop) -->
+                <div class="promo-display">
+                    <div class="display-card">
+                        <div class="display-image-placeholder">
+                            <!-- Image will be injected here via CSS/JS or just a placeholder div for now -->
+                            <img id="promo-display-img" src="" alt="Functionality Preview" style="display:none;">
+                            <div class="placeholder-box"></div>
+                        </div>
+                        <div class="display-info">
+                            <h3 id="promo-display-title">Planificación de rutas</h3>
+                            <p id="promo-display-desc">Optimiza las rutas de visita para maximizar la eficiencia de tu
+                                equipo de promotoría.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Servicios Section -->
+    <section id="nuestros-servicios" class="services-section">
+        <div class="services-header">
+            <h2 class="services-title">NUESTROS SERVICIOS</h2>
+            <h3 class="services-subtitle">Soluciones completas para tu negocio retail</h3>
+        </div>
+
+        <div class="services-container">
+            <!-- Card 1: Blue Theme -->
+            <div class="service-card blue-theme">
+                <h4 class="service-heading">Inteligencia de<br>Negocios</h4>
+                <p class="service-desc">Análisis automatizado de ventas e inventarios de todas las cadenas comerciales
+                    para tomar decisiones inteligentes.</p>
+                <div class="service-btn-container">
+                    <button class="service-btn">Datos en Tiempo Real</button>
+                </div>
+                <ul class="service-features">
+                    <li><span class="icon">⬇</span>
+                        <div class="text"><strong>Descargas automatizadas diarias</strong><br>De todas las cadenas
+                            comerciales</div>
+                    </li>
+                    <li><span class="icon">🖥</span>
+                        <div class="text"><strong>Dashboard interactivo 24/7</strong><br>Acceso desde cualquier
+                            dispositivo</div>
+                    </li>
+                    <li><span class="icon">📄</span>
+                        <div class="text"><strong>Reportes personalizados</strong><br>Análisis detallado por producto
+                        </div>
+                    </li>
+                    <li><span class="icon">📊</span>
+                        <div class="text"><strong>Indicadores clave</strong><br>KPIs para toma de decisiones</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Purple Theme -->
+            <div class="service-card purple-theme">
+                <h4 class="service-heading">Software de<br>Promotoría</h4>
+                <p class="service-desc">Control total de rutas, inventarios y ventas en campo con nuestra aplicación
+                    móvil especializada.</p>
+                <div class="service-btn-container">
+                    <button class="service-btn">Integración con Eureka BI</button>
+                </div>
+                <ul class="service-features">
+                    <li><span class="icon">📍</span>
+                        <div class="text"><strong>Control por GPS</strong><br>Solo funciona dentro de la tienda</div>
+                    </li>
+                    <li><span class="icon">🚪</span>
+                        <div class="text"><strong>Entradas y Salidas</strong><br>Registro automático de visitas</div>
+                    </li>
+                    <li><span class="icon">📸</span>
+                        <div class="text"><strong>Fotos de Anaqueles</strong><br>Captura en tiempo real</div>
+                    </li>
+                    <li><span class="icon">🔗</span>
+                        <div class="text"><strong>Integración BI</strong><br>Datos de inventarios de la cadena</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slogan Section -->
+    <section id="slogan-cta" class="slogan-section">
+        <div class="slogan-container">
+            <h2 class="slogan-title">¿Listo para <span class="highlight">INCREMENTAR</span><br>tus ventas?</h2>
+            <p class="slogan-subtitle">Obtén tu análisis GRATIS de ventas e inventarios</p>
+            <button class="slogan-btn">
+                <span class="btn-main">15 DIAS GRATIS</span>
+                <span class="btn-sub">Sin Compromisos y Resultados Inmediatos</span>
+            </button>
+            <div class="slogan-mockup">
+                <img src="Recursos/End Mockup.png" alt="Eureka Dashboard Mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-info" class="contact-section">
+        <div class="contact-header">
+            <h2 class="contact-title">Información y Ventas</h2>
+        </div>
+        <div class="contact-card">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>omar.tirado@eurekamx.com.mx</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Teléfono</h3>
+                    <p>+52 669 9947227</p>
+                </div>
+            </div>
+            <div class="contact-actions">
+                <a href="mailto:omar.tirado@eurekamx.com.mx" class="action-btn primary">Solicitar demo</a>
+                <a href="tel:+526699947227" class="action-btn outline">Llamar Ahora</a>
+                <a href="https://wa.me/526699947227" class="whatsapp-link" target="_blank">
+                    <!-- Note: Filename has typo 'Whattsap' as seen in directory list -->
+                    <img src="Recursos/Whattsap icon.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Top Section: Links & Contact -->
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                        <li><a href="#" id="privacy-link">Política de privacidad</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:omar.tirado@eurekamx.com.mx">omar.tirado@eurekamx.com.mx</a></li>
+                        <li><a href="tel:+526699947227">+52 669 9947227</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <a href="https://www.linkedin.com/company/eureka-mx/" aria-label="LinkedIn"><img
+                            src="Recursos/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <!-- Middle Section: BRAND -->
+            <div class="footer-brand">
+                <span>EUREKA</span>
+            </div>
+
+            <!-- Bottom Section: Copyright -->
+            <div class="footer-bottom">
+                <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-overlay hidden">
+        <div class="modal-wrapper">
+            <div class="modal-card">
+                <h2 class="modal-title">Política de privacidad</h2>
+                <p class="modal-text">
+                    "La presente Política de Privacidad establece los términos en que Sistemas Eureka Mx usa y protege
+                    la
+                    información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía
+                    está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos
+                    de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se
+                    emplea de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede
+                    cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar
+                    continuamente esta página para asegurarse que está de acuerdo con dichos cambios."
+                </p>
+            </div>
+            <button id="close-modal-btn" class="modal-close-btn">X</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

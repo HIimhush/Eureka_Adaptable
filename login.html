@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka | Ingreso a Clientes</title>
+    <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page-body">
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; gap: 10px; text-decoration: none; align-items: center;">
+                    <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo">
+                    <span class="brand-name">EUREKA</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-overlay"></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#funcionamiento">Funcionamiento</a></li>
+                    <li><a href="index.html#why-eureka">Beneficios</a></li>
+                    <li><a href="index.html#software-promotoria">Promotoría</a></li>
+                    <li><a href="index.html#nuestros-servicios">Servicios</a></li>
+                    <li><a href="index.html#contact-info">Contactos</a></li>
+                    <li class="mobile-nav-buttons">
+                        <a href="faq.html" class="btn-faq">FAQ</a>
+                        <a href="login.html" class="btn-outline active" style="background-color: #f0f4ff;">Ingreso a Clientes</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login-btn">
+                <a href="faq.html" class="btn-faq">FAQ</a>
+                <a href="login.html" class="btn-outline active" style="background-color: #f0f4ff;">Ingreso a
+                    Clientes</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main-section">
+        <div class="login-card">
+            <!-- Left Column: Image -->
+            <div class="login-image-col">
+                <img src="Recursos/Login_Mockup.png" alt="User working on Laptop">
+            </div>
+
+            <!-- Right Column: Form -->
+            <div class="login-form-col">
+                <div class="login-logo">
+                    <!-- Using SVG or PNG logo -->
+                    <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo" class="login-logo-img">
+                    <span class="login-brand-name">EUREKA</span>
+                </div>
+
+                <h2 class="login-title">Código de Cliente</h2>
+
+                <form class="login-form">
+                    <input type="text" placeholder="Ingresar código cliente" class="login-input">
+
+                    <button type="submit" class="btn-sign-in">
+                        <!-- Google 'G' logo placeholder -->
+                        <span class="google-icon-wrapper">
+                            <img src="Recursos/google logo.png" alt="G">
+                        </span>
+                        <span class="btn-text">Sign in</span>
+                    </button>
+
+                    <button type="button" class="btn-sign-out">
+                        Sign out
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Top Section: Links & Contact -->
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                        <li><a href="#" id="privacy-link">Política de privacidad</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:omar.tirado@eurekamx.com.mx">omar.tirado@eurekamx.com.mx</a></li>
+                        <li><a href="tel:+526699947227">+52 669 9947227</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <a href="https://www.linkedin.com/company/eureka-mx/" aria-label="LinkedIn"><img
+                            src="Recursos/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <!-- Middle Section: BRAND -->
+            <div class="footer-brand">
+                <span>EUREKA</span>
+            </div>
+
+            <!-- Bottom Section: Copyright -->
+            <div class="footer-bottom">
+                <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
