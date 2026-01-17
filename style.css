@@ -1644,8 +1644,8 @@ h1 {
 }
 
 .slogan-mockup img {
-    max-width: 70%;
-    width: 70%;
+    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
@@ -1731,7 +1731,7 @@ h1 {
 }
 
 .action-btn.primary:hover {
-    background-color: #1e40af;
+    background-color: #3654b8;
 }
 
 .action-btn.outline {
