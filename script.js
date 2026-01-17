@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuToggle.addEventListener('click', toggleMenu);
         mobileOverlay.addEventListener('click', toggleMenu);
 
+        // Mobile menu back button
+        const mobileMenuBack = document.querySelector('.mobile-menu-back');
+        if (mobileMenuBack) {
+            mobileMenuBack.addEventListener('click', toggleMenu);
+        }
+
         // Close menu when clicking on a nav link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
