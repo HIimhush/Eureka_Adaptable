@@ -73,18 +73,18 @@ header.nav-hidden {
     position: relative;
 }
 
-.nav-container > nav {
+.nav-container>nav {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.nav-container > .logo {
+.nav-container>.logo {
     position: absolute;
     left: 0;
 }
 
-.nav-container > .login-btn {
+.nav-container>.login-btn {
     position: absolute;
     right: 0;
 }
@@ -1235,9 +1235,15 @@ h1 {
 }
 
 .display-image-placeholder img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Images fill the box, cropping if necessary to maintain aspect ratio */
+}
+
+/* Specific adjustment for GPS image to show the top part (preventing cutoff) */
+img[src*="Accesos por GPS"] {
+    object-position: middle;
 }
 
 /* Placeholder box style if no image */
@@ -1292,7 +1298,7 @@ h1 {
     min-width: 100%;
     flex-shrink: 0;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s ease;
     pointer-events: none;
 }
 
@@ -1305,7 +1311,7 @@ h1 {
     background: white;
     border-radius: 40px;
     padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0);
     min-height: 500px;
     display: flex;
     flex-direction: column;
@@ -1612,22 +1618,27 @@ h1 {
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 10px 30px; /* Reduced padding */
+    padding: 10px 30px;
+    /* Reduced padding */
     cursor: pointer;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease;
-    margin-bottom: 40px; /* Reduced margin */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+    margin-bottom: 40px;
+    /* Reduced margin */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Reduced shadow */
 }
 
 .slogan-btn:hover {
-    transform: scale(1.02); /* More subtle hover */
+    transform: scale(1.02);
+    /* More subtle hover */
 }
 
 .slogan-btn .btn-main {
-    font-size: 1.4rem; /* Reduced from 1.8rem */
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
     font-weight: 900;
     font-family: 'Mattone', sans-serif;
     line-height: 1;
@@ -1635,7 +1646,8 @@ h1 {
 }
 
 .slogan-btn .btn-sub {
-    font-size: 0.8rem; /* Reduced from 0.9rem */
+    font-size: 0.8rem;
+    /* Reduced from 0.9rem */
     font-family: 'Helvetica', 'Arial', sans-serif;
     opacity: 0.9;
 }
@@ -1984,11 +1996,15 @@ h1 {
    ========================================= */
 
 /* Mobile Hamburger Menu */
-.mobile-menu-toggle {
+.mobile-menu-toggle,
+.mobile-menu-back {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.mobile-menu-toggle {
     padding: 10px;
     z-index: 1001;
     position: relative;
@@ -2024,7 +2040,7 @@ h1 {
     }
 
     /* Hide nav from main bar completely - only show in slide-out menu */
-    .nav-container > nav {
+    .nav-container>nav {
         display: none;
         position: fixed;
         top: 0;
@@ -2043,7 +2059,7 @@ h1 {
     }
 
     /* Show nav only when active (slide-out menu is open) */
-    .nav-container > nav.active {
+    .nav-container>nav.active {
         display: block;
         visibility: visible;
         right: 0;
@@ -2076,11 +2092,11 @@ h1 {
         align-items: flex-start;
     }
 
-nav ul li {
-    width: 100%;
-    border-bottom: 1px solid #e5e7eb;
-    display: block;
-}
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #e5e7eb;
+        display: block;
+    }
 
     nav ul {
         height: calc(100vh - 80px);
@@ -2103,37 +2119,37 @@ nav ul li {
         border-top: 1px solid #e5e7eb;
     }
 
-nav ul li a {
-    display: block;
-    padding: 15px 20px;
-    font-size: 1rem;
-}
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
 
-nav ul li.mobile-nav-buttons .btn-faq {
-    width: 100%;
-    text-align: center;
-    padding: 12px 20px;
-    display: block;
-    background-color: white;
-    color: #1e3a8a;
-    border: 2px solid #1e3a8a;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-}
+    nav ul li.mobile-nav-buttons .btn-faq {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        display: block;
+        background-color: white;
+        color: #1e3a8a;
+        border: 2px solid #1e3a8a;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+    }
 
-nav ul li.mobile-nav-buttons .btn-outline {
-    width: 100%;
-    text-align: center;
-    padding: 12px 20px;
-    display: block;
-    background-color: #1e3a8a;
-    color: white;
-    border: 2px solid #1e3a8a;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-}
+    nav ul li.mobile-nav-buttons .btn-outline {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        display: block;
+        background-color: #1e3a8a;
+        color: white;
+        border: 2px solid #1e3a8a;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+    }
 
     .login-btn {
         display: none;
@@ -2142,7 +2158,8 @@ nav ul li.mobile-nav-buttons .btn-outline {
 
 /* Mobile Overlay */
 .mobile-overlay {
-    display: none; /* Hidden by default on desktop */
+    display: none;
+    /* Hidden by default on desktop */
     position: fixed;
     top: 0;
     left: 0;
@@ -2191,13 +2208,13 @@ nav ul li.mobile-nav-buttons .btn-outline {
     /* Nav visibility is handled in Mobile Navigation section above */
     /* This ensures desktop positioning doesn't interfere */
 
-    .nav-container > .logo,
-    .nav-container > .login-btn {
+    .nav-container>.logo,
+    .nav-container>.login-btn {
         position: static;
         transform: none;
     }
 
-    .nav-container > .logo {
+    .nav-container>.logo {
         flex: 1;
         position: relative;
         left: auto;
@@ -2821,6 +2838,7 @@ nav ul li.mobile-nav-buttons .btn-outline {
 
 /* Touch-friendly improvements */
 @media (max-width: 1024px) {
+
     button,
     a.btn-white,
     a.btn-transparent,

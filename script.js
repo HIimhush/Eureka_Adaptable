@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Close menu when clicking on a nav link
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 1024) {
                     toggleMenu();
                 }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Close menu on window resize if it's larger than mobile
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             if (window.innerWidth > 1024) {
                 mobileMenuToggle.classList.remove('active');
                 nav.classList.remove('active');
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const promoItems = document.querySelectorAll('.promo-item');
     const displayTitle = document.getElementById('promo-display-title');
     const displayDesc = document.getElementById('promo-display-desc');
-    // const displayImg = document.getElementById('promo-display-img'); // Uncomment when images are ready
+    const displayImg = document.getElementById('promo-display-img');
 
     function updatePromoDisplay(item) {
         // Remove active class from all
@@ -112,9 +112,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update content
         const title = item.getAttribute('data-title');
         const desc = item.getAttribute('data-desc');
+        const img = item.getAttribute('data-img');
 
         if (displayTitle) displayTitle.textContent = title;
         if (displayDesc) displayDesc.textContent = desc;
+
+        if (displayImg && img) {
+            displayImg.src = img;
+            displayImg.style.display = 'block';
+            // Hide placeholder box if it exists sibling to img
+            const placeholder = displayImg.nextElementSibling;
+            if (placeholder && placeholder.classList.contains('placeholder-box')) {
+                placeholder.style.display = 'none';
+            }
+        }
     }
 
     // Initialize with first active item (Desktop only)
@@ -176,14 +187,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Touch Events
     if (promoCarousel) {
-        promoCarousel.addEventListener('touchstart', function(e) {
+        promoCarousel.addEventListener('touchstart', function (e) {
             if (window.innerWidth > 1024) return;
             startX = e.touches[0].clientX;
             startTime = Date.now();
             isDragging = true;
         });
 
-        promoCarousel.addEventListener('touchmove', function(e) {
+        promoCarousel.addEventListener('touchmove', function (e) {
             if (!isDragging || window.innerWidth > 1024) return;
             e.preventDefault();
             currentX = e.touches[0].clientX;
@@ -193,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
             promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
         });
 
-        promoCarousel.addEventListener('touchend', function(e) {
+        promoCarousel.addEventListener('touchend', function (e) {
             if (!isDragging || window.innerWidth > 1024) return;
             isDragging = false;
             const diffX = currentX - startX;
@@ -214,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Mouse drag support (for testing on desktop)
-        promoCarousel.addEventListener('mousedown', function(e) {
+        promoCarousel.addEventListener('mousedown', function (e) {
             if (window.innerWidth > 1024) return;
             startX = e.clientX;
             startTime = Date.now();
@@ -222,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
             promoCarousel.style.cursor = 'grabbing';
         });
 
-        promoCarousel.addEventListener('mousemove', function(e) {
+        promoCarousel.addEventListener('mousemove', function (e) {
             if (!isDragging || window.innerWidth > 1024) return;
             e.preventDefault();
             currentX = e.clientX;
@@ -232,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
             promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
         });
 
-        promoCarousel.addEventListener('mouseup', function(e) {
+        promoCarousel.addEventListener('mouseup', function (e) {
             if (!isDragging || window.innerWidth > 1024) return;
             isDragging = false;
             promoCarousel.style.cursor = 'grab';
@@ -252,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        promoCarousel.addEventListener('mouseleave', function() {
+        promoCarousel.addEventListener('mouseleave', function () {
             if (isDragging && window.innerWidth <= 1024) {
                 isDragging = false;
                 promoCarousel.style.cursor = 'grab';
@@ -263,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Dot navigation
     carouselDots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function () {
             if (window.innerWidth <= 1024) {
                 updateCarousel(index);
             }
