@@ -1345,6 +1345,39 @@ img[src*="Accesos por GPS"] {
     transform: scale(1.2);
 }
 
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #1e3a8a;
+    display: flex;
+    /* Flex to center icon */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+    background-color: white;
+}
+
+.carousel-arrow.prev {
+    left: 10px;
+}
+
+.carousel-arrow.next {
+    right: 10px;
+}
+
 /* Responsive */
 /* Responsive */
 @media (max-width: 1280px) {

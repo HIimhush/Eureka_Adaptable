@@ -187,99 +187,155 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Touch Events
     if (promoCarousel) {
-        promoCarousel.addEventListener('touchstart', function (e) {
-            if (window.innerWidth > 1024) return;
-            startX = e.touches[0].clientX;
-            startTime = Date.now();
-            isDragging = true;
-        });
+        let startY = 0; // Track Y start for scroll detection
+        let isScrolling = null; // null = unknown, true = vertical scroll, false = horizontal swipe
 
-        promoCarousel.addEventListener('touchmove', function (e) {
-            if (!isDragging || window.innerWidth > 1024) return;
-            e.preventDefault();
-            currentX = e.touches[0].clientX;
-            const diffX = currentX - startX;
-            const baseTransform = -currentIndex * 100;
-            const additionalTransform = (diffX / promoCarousel.offsetWidth) * 100;
-            promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
-        });
+        // Touch Events
+        if (promoCarousel) {
+            promoCarousel.addEventListener('touchstart', function (e) {
+                if (window.innerWidth > 1024) return;
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                startTime = Date.now();
+                isDragging = true;
+                isScrolling = null; // Reset
+                // Do NOT preventDefault here to allow click/scroll start
+            });
 
-        promoCarousel.addEventListener('touchend', function (e) {
-            if (!isDragging || window.innerWidth > 1024) return;
-            isDragging = false;
-            const diffX = currentX - startX;
-            const diffTime = Date.now() - startTime;
-            const threshold = 50; // Minimum swipe distance
-            const velocity = Math.abs(diffX) / diffTime;
+            promoCarousel.addEventListener('touchmove', function (e) {
+                if (!isDragging || window.innerWidth > 1024) return;
 
-            if (Math.abs(diffX) > threshold || velocity > 0.3) {
-                if (diffX > 0) {
-                    prevSlide();
-                } else {
-                    nextSlide();
+                currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+
+                const diffX = startX - currentX; // Positive if moving left (next), negative if moving right (prev)
+                const diffY = startY - currentY;
+
+                // Determine scroll direction once
+                if (isScrolling === null) {
+                    // If vertical movement is greater than horizontal, it's a scroll
+                    if (Math.abs(diffY) > Math.abs(diffX)) {
+                        isScrolling = true;
+                        isDragging = false; // Stop tracking carousel drag
+                        return; // Allow native scroll
+                    } else {
+                        isScrolling = false;
+                        e.preventDefault(); // Lock scroll for carousel swipe
+                    }
                 }
-            } else {
-                // Return to current slide
-                updateCarousel(currentIndex);
-            }
-        });
 
-        // Mouse drag support (for testing on desktop)
-        promoCarousel.addEventListener('mousedown', function (e) {
-            if (window.innerWidth > 1024) return;
-            startX = e.clientX;
-            startTime = Date.now();
-            isDragging = true;
-            promoCarousel.style.cursor = 'grabbing';
-        });
+                if (isScrolling) return; // If scrolling vertically, ignore swipe
 
-        promoCarousel.addEventListener('mousemove', function (e) {
-            if (!isDragging || window.innerWidth > 1024) return;
-            e.preventDefault();
-            currentX = e.clientX;
-            const diffX = currentX - startX;
-            const baseTransform = -currentIndex * 100;
-            const additionalTransform = (diffX / promoCarousel.offsetWidth) * 100;
-            promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
-        });
+                // Carousel Swipe Logic
+                e.preventDefault(); // Ensure scroll remains locked
+                const baseTransform = -currentIndex * 100;
+                // Drag visual feedback
+                const additionalTransform = ((currentX - startX) / promoCarousel.offsetWidth) * 100;
+                promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
+            });
 
-        promoCarousel.addEventListener('mouseup', function (e) {
-            if (!isDragging || window.innerWidth > 1024) return;
-            isDragging = false;
-            promoCarousel.style.cursor = 'grab';
-            const diffX = currentX - startX;
-            const diffTime = Date.now() - startTime;
-            const threshold = 50;
-            const velocity = Math.abs(diffX) / diffTime;
-
-            if (Math.abs(diffX) > threshold || velocity > 0.3) {
-                if (diffX > 0) {
-                    prevSlide();
-                } else {
-                    nextSlide();
+            promoCarousel.addEventListener('touchend', function (e) {
+                if (!isDragging || window.innerWidth > 1024 || isScrolling) {
+                    isDragging = false;
+                    return;
                 }
-            } else {
-                updateCarousel(currentIndex);
-            }
-        });
 
-        promoCarousel.addEventListener('mouseleave', function () {
-            if (isDragging && window.innerWidth <= 1024) {
+                isDragging = false;
+                // Use changedTouches for end event
+                const endX = e.changedTouches[0].clientX;
+                const diffX = endX - startX;
+                const diffTime = Date.now() - startTime;
+                const threshold = 50; // Minimum swipe distance
+                const velocity = Math.abs(diffX) / diffTime;
+
+                if (Math.abs(diffX) > threshold || velocity > 0.3) {
+                    if (diffX > 0) {
+                        prevSlide();
+                    } else {
+                        nextSlide();
+                    }
+                } else {
+                    // Return to current slide
+                    updateCarousel(currentIndex);
+                }
+            });
+
+            // Mouse drag support (for testing on desktop)
+            promoCarousel.addEventListener('mousedown', function (e) {
+                if (window.innerWidth > 1024) return;
+                startX = e.clientX;
+                startTime = Date.now();
+                isDragging = true;
+                promoCarousel.style.cursor = 'grabbing';
+            });
+
+            promoCarousel.addEventListener('mousemove', function (e) {
+                if (!isDragging || window.innerWidth > 1024) return;
+                e.preventDefault();
+                currentX = e.clientX;
+                const diffX = currentX - startX;
+                const baseTransform = -currentIndex * 100;
+                const additionalTransform = (diffX / promoCarousel.offsetWidth) * 100;
+                promoCarousel.style.transform = `translateX(${baseTransform + additionalTransform}%)`;
+            });
+
+            promoCarousel.addEventListener('mouseup', function (e) {
+                if (!isDragging || window.innerWidth > 1024) return;
                 isDragging = false;
                 promoCarousel.style.cursor = 'grab';
-                updateCarousel(currentIndex);
-            }
+                const diffX = currentX - startX;
+                const diffTime = Date.now() - startTime;
+                const threshold = 50;
+                const velocity = Math.abs(diffX) / diffTime;
+
+                if (Math.abs(diffX) > threshold || velocity > 0.3) {
+                    if (diffX > 0) {
+                        prevSlide();
+                    } else {
+                        nextSlide();
+                    }
+                } else {
+                    updateCarousel(currentIndex);
+                }
+            });
+
+            promoCarousel.addEventListener('mouseleave', function () {
+                if (isDragging && window.innerWidth <= 1024) {
+                    isDragging = false;
+                    promoCarousel.style.cursor = 'grab';
+                    updateCarousel(currentIndex);
+                }
+            });
+        }
+
+        // Dot navigation
+        carouselDots.forEach((dot, index) => {
+            dot.addEventListener('click', function () {
+                if (window.innerWidth <= 1024) {
+                    updateCarousel(index);
+                }
+            });
         });
     }
 
-    // Dot navigation
-    carouselDots.forEach((dot, index) => {
-        dot.addEventListener('click', function () {
-            if (window.innerWidth <= 1024) {
-                updateCarousel(index);
-            }
+    // Arrow Navigation
+    const prevBtn = document.querySelector('.carousel-arrow.prev');
+    const nextBtn = document.querySelector('.carousel-arrow.next');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+            // Prevent default just in case (e.g. if button type isn't explicit)
+            e.preventDefault();
+            prevSlide();
         });
-    });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            nextSlide();
+        });
+    }
 
     // Initialize carousel
     if (carouselItems.length > 0 && window.innerWidth <= 1024) {
