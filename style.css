@@ -67,8 +67,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Top Bar */
-/* Top Bar Removed */
 
 /* Navigation */
 header {
@@ -87,7 +85,7 @@ header.nav-hidden {
 }
 
 .nav-container {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -222,19 +220,19 @@ main {
 }
 
 .hero-inner {
-    max-width: 1400px;
-    padding: 0 40px;
+    max-width: 1550px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
 }
 
 /* Hero Content (Left) */
 .hero-content {
     flex: 1.2;
-    max-width: 70%;
-    z-index: 2;
+    max-width: 100%;
+    z-index: 1;
 }
 
 .hero-subtitle {
@@ -248,14 +246,14 @@ main {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.1rem;
     /* Reduced from 4rem */
     line-height: 1.1;
     margin-bottom: 20px;
     font-weight: 900;
     /* Extra bold */
     color: white;
-    max-width: 90%;
+    max-width: 100%;
     /* Make it more compact */
 }
 
@@ -718,22 +716,90 @@ h1 {
     justify-content: center;
     align-items: center;
     position: relative;
-    /* Adjust positioning if needed to match mockup layout */
 }
 
 .hero-image img {
-    max-width: 110%;
-    /* Increased size */
+    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: contain;
 }
 
-/* Responsive */
-@media (max-width: 1280px) {
+/* Responsive - Adjustments for smaller desktops/laptops */
+@media (max-width: 1400px) {
+    .hero-inner {
+        padding: 0 30px;
+    }
+
+    .hero-content {
+        max-width: 55%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    /* Compact Nav for mid-sized screens to prevent squash */
+    nav ul {
+        gap: 15px;
+    }
+
+    .nav-container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-inner {
+        padding: 0 25px;
+    }
+
+    .hero-content {
+        max-width: 50%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .btn-white,
+    .btn-transparent {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 0.85rem !important;
+    }
+
+    .login-btn .btn-outline {
+        padding: 5px 10px;
+        font-size: 0.85rem !important;
+    }
+
+    .btn-faq {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Mobile breakpoint - stack layout */
+@media (max-width: 900px) {
     .hero-frame {
         flex-direction: column;
         padding: 40px;
-        text-align: center;
+        align-items: flex-start;
     }
 
     .hero-content {
@@ -742,16 +808,11 @@ h1 {
     }
 
     .hero-buttons {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     h1 {
-        font-size: 3rem;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
+        font-size: 2rem;
     }
 }
 
@@ -908,11 +969,11 @@ h1 {
 /* Image Column */
 .accordion-image {
     flex: 1;
-    max-width: 46%;
+    max-width: 90%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .accordion-image img {
@@ -1887,7 +1948,7 @@ img[src*="Accesos por GPS"] {
 
 .action-btn.primary {
     background-color: #253c7a;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
 }
 
@@ -1914,6 +1975,20 @@ img[src*="Accesos por GPS"] {
 
 .whatsapp-link:hover img {
     transform: scale(1.4);
+}
+
+/* Custom Outline Button for Contacts */
+.action-btn.custom-outline-btn {
+    background-color: white;
+    color: #253c7a;
+    /* Match primary blue */
+    border: 2px solid #253c7a;
+}
+
+.action-btn.custom-outline-btn:hover {
+    background-color: #f0f9ff;
+    color: #1e3a8a;
+    border-color: #1e3a8a;
 }
 
 @media (max-width: 768px) {
@@ -2163,7 +2238,7 @@ img[src*="Accesos por GPS"] {
     height: 3px;
     background-color: #1e3a8a;
     margin: 5px 0;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     border-radius: 2px;
 }
 
@@ -2180,7 +2255,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Mobile Navigation */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .mobile-menu-toggle {
         display: block;
         margin-left: auto;
@@ -2188,17 +2263,17 @@ img[src*="Accesos por GPS"] {
 
     /* Hide nav from main bar completely - only show in slide-out menu */
     .nav-container>nav {
-        display: none;
+        display: block;
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         left: auto;
-        transform: none;
+        transform: translateX(100%);
         width: 280px;
         height: 100vh;
         background-color: white;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
         z-index: 1001;
         padding-top: 0;
         overflow-y: auto;
@@ -2207,9 +2282,8 @@ img[src*="Accesos por GPS"] {
 
     /* Show nav only when active (slide-out menu is open) */
     .nav-container>nav.active {
-        display: block;
         visibility: visible;
-        right: 0;
+        transform: translateX(0);
     }
 
     /* Mobile menu back button */
@@ -2337,7 +2411,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Header Mobile */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     header {
         padding: 20px 20px;
         position: sticky;
@@ -2378,7 +2452,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Hero Section Mobile */
-@media (max-width: 1280px) {
+@media (max-width: 900px) {
     .hero-frame {
         border-radius: 0 0 50px 50px;
         padding: 40px 20px;
@@ -2600,7 +2674,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Promotoria Section Mobile */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .promo-section {
         padding: 50px 20px;
     }
@@ -2985,7 +3059,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Touch-friendly improvements */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
 
     button,
     a.btn-white,
@@ -3007,7 +3081,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Prevent horizontal scroll on mobile */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     body {
         overflow-x: hidden;
     }

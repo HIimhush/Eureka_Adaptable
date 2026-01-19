@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Close menu when clicking on a nav link
         navLinks.forEach(link => {
             link.addEventListener('click', function () {
-                if (window.innerWidth <= 1024) {
+                if (window.innerWidth <= 900) {
                     toggleMenu();
                 }
             });
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Close menu on window resize if it's larger than mobile
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 1024) {
+            if (window.innerWidth > 900) {
                 mobileMenuToggle.classList.remove('active');
                 nav.classList.remove('active');
                 mobileOverlay.classList.remove('active');
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         // On mobile, keep header visible (better UX)
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= 900) {
             header.classList.remove('nav-hidden');
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
             return;
@@ -443,6 +443,53 @@ document.addEventListener('DOMContentLoaded', function () {
             }).catch(err => {
                 console.error('Failed to copy: ', err);
             });
+        });
+    });
+
+    // Smooth Scrolling for Anchor Links (0.4s animation)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            // Handle special cases like 'index.html#top' if on same page
+            // But selector is `href^="#"` so it only catches internal links.
+            // If the link is `index.html#top`, this selector won't catch it unless it is literally `#top`.
+            // The nav links are `#funcionamiento`, etc. so they are caught.
+
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+
+                const header = document.querySelector('header');
+                // Use a safer offset calculation, considering sticky position
+                const headerOffset = header ? header.offsetHeight : 0;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const startPosition = window.scrollY;
+                const offsetPosition = elementPosition + startPosition - headerOffset;
+
+                const duration = 900; // 0.9 seconds
+                let start = null;
+
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const percentage = Math.min(progress / duration, 1);
+
+                    // Drop-in easing function (easeInOutQuad)
+                    const ease = percentage < 0.5 ?
+                        2 * percentage * percentage :
+                        1 - Math.pow(-2 * percentage + 2, 2) / 2;
+
+                    window.scrollTo(0, startPosition + (offsetPosition - startPosition) * ease);
+
+                    if (progress < duration) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+
+                window.requestAnimationFrame(step);
+            }
         });
     });
 
