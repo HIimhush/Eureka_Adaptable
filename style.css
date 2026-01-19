@@ -38,14 +38,7 @@ body {
 }
 
 /* Top Bar */
-.top-bar {
-    background-color: #fcd34d;
-    padding: 8px 0;
-    text-align: center;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    font-family: 'Helvetica', sans-serif !important;
-}
+/* Top Bar Removed */
 
 /* Navigation */
 header {
@@ -114,7 +107,8 @@ header.nav-hidden {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 15px;
+    /* Reduced from 30px */
     align-items: center;
 }
 
@@ -325,7 +319,8 @@ h1 {
     width: 100%;
     background: none;
     border: none;
-    padding: 25px 30px;
+    padding: 15px 30px;
+    /* Reduced padding from 25px */
     text-align: left;
     font-size: 1.1rem;
     font-weight: 700;
@@ -1024,24 +1019,32 @@ h1 {
     line-height: 1.3;
 }
 
-/* Individual Card Colors & Positions */
-.card-01,
+/* Individual Card Colors & Positions - Gradient Logic */
+.card-01 {
+    background-color: #60a5fa;
+    /* Blue 400 */
+}
+
 .card-02 {
-    background-color: #0ea5e9;
+    background-color: #3b82f6;
+    /* Blue 500 */
 }
 
 .card-03 {
-    background-color: #0369a1;
+    background-color: #2563eb;
+    /* Blue 600 */
 }
 
 .card-04 {
-    background-color: #1e3a8a;
+    background-color: #1d4ed8;
+    /* Blue 700 */
 }
 
 /* Card 05: Full Width */
 .card-05 {
     grid-column: 1 / -1;
-    background-color: #0369a1;
+    background-color: #1e3a8a;
+    /* Blue 900 */
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
@@ -2033,7 +2036,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Mobile Navigation */
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
     .mobile-menu-toggle {
         display: block;
         margin-left: auto;
@@ -2112,7 +2115,8 @@ img[src*="Accesos por GPS"] {
         flex-direction: column;
         gap: 15px;
         width: 100%;
-        margin-top: auto;
+        margin-top: 20px;
+        /* Removed auto to place higher */
         position: sticky;
         bottom: 0;
         background-color: white;
@@ -2189,7 +2193,7 @@ img[src*="Accesos por GPS"] {
 }
 
 /* Header Mobile */
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
     header {
         padding: 20px 20px;
         position: sticky;
@@ -2867,4 +2871,36 @@ img[src*="Accesos por GPS"] {
     * {
         max-width: 100%;
     }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
 }
