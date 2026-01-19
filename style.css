@@ -1600,7 +1600,7 @@ img[src*="Accesos por GPS"] {
 
 /* Slogan Section */
 .slogan-section {
-    background: linear-gradient(180deg, #bfdbfe 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #bfdbfe 0%, #d8ecff 100%);
     padding: 80px 20px 0;
     /* No bottom padding so image sits on bottom */
     text-align: center;
@@ -1629,27 +1629,27 @@ img[src*="Accesos por GPS"] {
 .slogan-title {
     font-size: 1.7rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #242284;
     font-family: 'Mattone', sans-serif;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .slogan-title .highlight {
-    color: white;
+    color: #242284;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .slogan-subtitle {
     font-size: 1.2rem;
-    color: #1e3a8a;
+    color: #324c94;
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-weight: 600;
     margin-bottom: 40px;
 }
 
 .slogan-btn {
-    background-color: #0f172a;
+    background-color: #0a1d48;
     /* Dark blue */
     color: white;
     border: none;
