@@ -314,19 +314,6 @@ h1 {
     font-family: 'ZT Nature', sans-serif;
 }
 
-/* Decorative shape (orange blob hint) */
-.faq-deco-shape {
-    position: absolute;
-    top: -20px;
-    right: -100px;
-    width: 60px;
-    height: 60px;
-    background-color: #fcd34d;
-    border-radius: 50% 30% 50% 70%;
-    z-index: -1;
-    opacity: 0.8;
-}
-
 .faq-grid {
     display: flex;
     gap: 40px;
