@@ -422,4 +422,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Copy to Clipboard Logic
+    const copyBtns = document.querySelectorAll('.copy-btn');
+
+    copyBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+            const textToCopy = targetElement.textContent.trim();
+            const feedback = this.nextElementSibling; // The .copy-feedback span
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Show feedback
+                feedback.classList.add('show');
+
+                // Hide after 2 seconds
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+    });
+
 });
