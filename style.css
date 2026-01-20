@@ -1,3 +1,7 @@
+/* -----------------------------------------------------------------------------
+   --- FUENTES Y ESTILOS GLOBALES ---
+   Definición de tipografías y variables base.
+   ----------------------------------------------------------------------------- */
 @font-face {
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-Regular.ttf') format('truetype');
@@ -68,7 +72,10 @@ body {
 }
 
 
-/* Navigation */
+/* -----------------------------------------------------------------------------
+   --- HEADER Y NAVEGACIÓN ---
+   Estilos de la barra superior, menú y logotipos.
+   ----------------------------------------------------------------------------- */
 header {
     background-color: rgb(255, 255, 255);
     padding: 40px 45px;
@@ -136,11 +143,104 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
-    /* Reduced from 30px */
     align-items: center;
 }
 
-nav ul li.mobile-nav-buttons {
+/* Dropdown Support */
+.nav-item-dropdown {
+    position: relative;
+    /* Removed padding/margin hacks */
+}
+
+.nav-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.90rem;
+    font-weight: 900;
+    font-family: 'Helvetica', sans-serif;
+    color: #171d26;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+}
+
+.dropdown-icon {
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.5s ease;
+    margin-top: -2px;
+    /* Visual alignment fix for '+' character */
+}
+
+.nav-item-dropdown.active .dropdown-icon {
+    transform: rotate(45deg);
+    /* FAQ style rotation */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1002;
+    margin-top: 15px;
+    /* Spacing */
+}
+
+/* Arrow for dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+}
+
+/* Show when active (JS toggled) */
+.nav-item-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #374151;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    font-family: 'Helvetica', sans-serif !important;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f9ff;
+    color: #1e3a8a;
+}
+
+nav ul li.mobile-nav-buttons,
+nav ul li.mobile-nav-item {
     display: none;
 }
 
@@ -191,7 +291,10 @@ nav a {
     background-color: #becfff;
 }
 
-/* Hero Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: HERO (PORTADA) ---
+   Estilos para el banner principal del sitio.
+   ----------------------------------------------------------------------------- */
 main {
     padding: 0;
     /* Removed padding to allow full width */
@@ -816,7 +919,10 @@ h1 {
     }
 }
 
-/* How it Works Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: CÓMO FUNCIONA ---
+   Estilos para el acordeón informativo.
+   ----------------------------------------------------------------------------- */
 .how-it-works {
     background-color: #ffffff;
     /* Light blue background matching image */
@@ -1009,7 +1115,10 @@ h1 {
     }
 }
 
-/* Why Eureka Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: BENEFICIOS (WHY EUREKA) ---
+   Tarjetas con puntos clave de valor.
+   ----------------------------------------------------------------------------- */
 .why-eureka {
     background-color: #F8FAFC;
     padding: 80px 20px;
@@ -1209,7 +1318,10 @@ h1 {
     }
 }
 
-/* Software Promotoria Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: SOFTWARE DE PROMOTORÍA ---
+   Estilos para la lista de funciones y carrusel móvil.
+   ----------------------------------------------------------------------------- */
 .promo-section {
     background: linear-gradient(180deg, #2b6ebb 10%, #8fbaeb 60%, #ffffff 100%);
     /* Light blue gradient */
@@ -1512,7 +1624,10 @@ img[src*="Accesos por GPS"] {
     }
 }
 
-/* Nuestros Servicios Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: NUESTROS SERVICIOS ---
+   Tarjetas de servicios (BI y Promotoría).
+   ----------------------------------------------------------------------------- */
 .services-section {
     background-color: white;
     padding: 80px 40px;
@@ -1691,7 +1806,10 @@ img[src*="Accesos por GPS"] {
     }
 }
 
-/* Slogan Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: SLOGAN Y CTA ---
+   Llamada a la acción final antes del pie de página.
+   ----------------------------------------------------------------------------- */
 .slogan-section {
     background: linear-gradient(180deg, #e2effd 0%, #b5dbfe 100%);
     padding: 80px 20px 0;
@@ -1798,7 +1916,10 @@ img[src*="Accesos por GPS"] {
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
 }
 
-/* Contact Section */
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: CONTACTO (HOME) ---
+   Sección de contacto en la página principal.
+   ----------------------------------------------------------------------------- */
 .contact-section {
     background: linear-gradient(360deg, #0f172a 0.1%, #ffffff 1%);
     padding: 60px 40px;
@@ -1991,6 +2112,203 @@ img[src*="Accesos por GPS"] {
     border-color: #1e3a8a;
 }
 
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN: PÁGINA DE CONTACTO (INTERNA) ---
+   Estilos específicos para contacto.html y formularios.
+   ----------------------------------------------------------------------------- */
+
+.contact-page-main {
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.contact-page-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-page-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: left;
+    max-width: 400px;
+}
+
+.contact-logo-img {
+    width: 110%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-page-form-wrapper {
+    flex: 1.5;
+    max-width: 600px;
+}
+
+.contact-page-title {
+    font-family: 'ZT NATURE', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.contact-page-subtitle {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.contact-page-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-page-form .form-group {
+    width: 100%;
+}
+
+.contact-page-form input[type="email"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: 'Helvetica', sans-serif;
+    color: #374151;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.contact-page-form input[type="email"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.contact-page-form input[type="email"]::placeholder {
+    color: #9ca3af;
+}
+
+.contact-page-form textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-family: 'Helvetica', sans-serif;
+    color: #374151;
+    background-color: #f9fafb;
+    outline: none;
+    resize: vertical;
+    min-height: 250px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-page-form textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background-color: #fff;
+}
+
+.contact-page-form textarea::placeholder {
+    color: #9ca3af;
+}
+
+.contact-submit-btn {
+    background-color: #162a60;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Helvetica', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.contact-submit-btn:hover {
+    background-color: #5c6fad;
+    transform: translateY(-8px);
+}
+
+.contact-submit-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-success-message {
+    background-color: #ffffff;
+    border: 1px solid #1cffb3;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.form-success-message p {
+    color: #065f46;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+}
+
+/* Contact Page Mobile */
+@media (max-width: 900px) {
+    .contact-page-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-page-graphic {
+        max-width: 200px;
+    }
+
+    .contact-logo-img {
+        max-width: 150px;
+    }
+
+    .contact-page-form-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contact-page-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .contact-page-subtitle {
+        text-align: center;
+    }
+
+    .contact-submit-btn {
+        width: 100%;
+        align-self: center;
+    }
+
+    .back-to-home {
+        display: block;
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
     .contact-details {
         flex-direction: column;
@@ -2008,7 +2326,10 @@ img[src*="Accesos por GPS"] {
     }
 }
 
-/* Footer Section */
+/* -----------------------------------------------------------------------------
+   --- FOOTER (PIE DE PÁGINA) ---
+   Estilos generales del pie de página.
+   ----------------------------------------------------------------------------- */
 .main-footer {
     background-color: #0f172a;
     /* Dark Blue / Slate 900 */
@@ -2071,6 +2392,12 @@ img[src*="Accesos por GPS"] {
 
 .footer-social {
     margin-left: auto;
+}
+
+.footer-social a {
+    text-decoration: none !important;
+    border: none;
+    outline: none;
 }
 
 .footer-social img {
@@ -2213,11 +2540,12 @@ img[src*="Accesos por GPS"] {
     opacity: 1;
 }
 
-/* =========================================
-   MOBILE RESPONSIVE STYLES
-   ========================================= */
+/* -----------------------------------------------------------------------------
+   --- ESTILOS RESPONSIVOS (MÓVIL) ---
+   Adaptaciones para pantallas pequeñas, menú hamburguesa y modales.
+   ----------------------------------------------------------------------------- */
 
-/* Mobile Hamburger Menu */
+/* Menú Hamburguesa en Móvil */
 .mobile-menu-toggle,
 .mobile-menu-back {
     display: none;
@@ -2317,6 +2645,22 @@ img[src*="Accesos por GPS"] {
         width: 100%;
         border-bottom: 1px solid #e5e7eb;
         display: block;
+    }
+
+    nav ul li.mobile-nav-item {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Reset negative margin from desktop dropdown style */
+    .nav-item-dropdown {
+        margin-bottom: 0;
+        padding-bottom: 0px;
+        /* Ensure it behaves like a normal list item */
+        border-bottom: 1px solid #e5e7eb;
     }
 
     nav ul {

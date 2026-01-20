@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka | Contacto</title>
+    <!-- Icono de pestaña -->
+    <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+    --- SECCIÓN DE NAVEGACIÓN (HEADER) --- 
+    Idéntica a la página principal.
+    -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html#top" style="display: flex; gap: 10px; text-decoration: none; align-items: center;">
+                    <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo">
+                    <span class="brand-name">EUREKA</span>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-overlay"></div>
+            <nav>
+                <button class="mobile-menu-back" aria-label="Cerrar menú">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <ul>
+                    <li><a href="index.html#funcionamiento">Funcionamiento</a></li>
+                    <li><a href="index.html#why-eureka">Beneficios</a></li>
+                    <li><a href="index.html#software-promotoria">Promotoría</a></li>
+                    <li><a href="index.html#nuestros-servicios">Servicios</a></li>
+                    <!-- Dropdown 'Contactos' para Desktop -->
+                    <li class="nav-item-dropdown desktop-only">
+                        <button class="nav-dropdown-toggle">
+                            Contactos
+                            <span class="dropdown-icon">+</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html#contact-info" class="dropdown-item">Nuestros datos</a>
+                            <a href="contacto.html" class="dropdown-item">Mandar correo</a>
+                        </div>
+                    </li>
+                    <!-- Opciones 'Contactos' para Móvil -->
+                    <li class="mobile-nav-item"><a href="index.html#contact-info">Nuestros datos</a></li>
+                    <li class="mobile-nav-item"><a href="contacto.html">Mandar correo</a></li>
+                    <li class="mobile-nav-buttons">
+                        <a href="faq.html" class="btn-faq">FAQ</a>
+                        <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login-btn">
+                <a href="faq.html" class="btn-faq">FAQ</a>
+                <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 
+    --- CONTENIDO PRINCIPAL: CONTACTO --- 
+    Formulario para envío directo de correos.
+    -->
+    <main class="contact-page-main">
+        <div class="contact-page-container">
+            <!-- Columna Izquierda: Imagen decorativa -->
+            <div class="contact-page-graphic">
+                <img src="Recursos/Email_deco.png" alt="Eureka Contact" class="contact-logo-img">
+            </div>
+
+            <!-- Columna Derecha: Formulario -->
+            <div class="contact-page-form-wrapper">
+                <h1 class="contact-page-title">Contactanos mediante E-Mail</h1>
+                <p class="contact-page-subtitle">Solicita nuestros servicios, y hablemos sobre como implementar Eureka
+                    para tu negocio</p>
+
+                <!-- El formulario usa Formspree para procesar el envío -->
+                <form id="contact-form" class="contact-page-form" action="https://formspree.io/f/xqeedgzo"
+                    method="POST">
+                    <!-- Campo oculto para definir el destinatario real en la config de Formspree -->
+                    <input type="hidden" name="_to" value="omar.tirado@eurekamx.com.mx">
+
+                    <!-- Entrada de Email -->
+                    <div class="form-group">
+                        <input type="email" name="email" id="user-email" placeholder="TuCorreo@domain.com" required>
+                    </div>
+
+                    <!-- Entrada de Mensaje -->
+                    <div class="form-group">
+                        <textarea name="message" id="user-message" placeholder="Asunto ..." rows="10"
+                            required></textarea>
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <button type="submit" class="contact-submit-btn">Enviar Mensaje</button>
+                </form>
+
+                <!-- Mensaje de éxito (Oculto por defecto) -->
+                <div id="form-success" class="form-success-message" style="display: none;">
+                    <p>¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 
+    --- FOOTER --- 
+    Pie de página estándar.
+    -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Sección Superior -->
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                        <li><a href="#" id="privacy-link">Política de privacidad</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:omar.tirado@eurekamx.com.mx">omar.tirado@eurekamx.com.mx</a></li>
+                        <li><a href="tel:+526699947227">+52 669 9947227</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-social">
+                    <a href="https://wa.me/526699947227" aria-label="WhatsApp" target="_blank"
+                        style="margin-right: 10px;">
+                        <img src="Recursos/Contact_whatsapp logopng.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.linkedin.com/company/eureka-mx/" aria-label="LinkedIn">
+                        <img src="Recursos/LinkedIn_logo_initials.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Marca -->
+            <div class="footer-brand">
+                <span>EUREKA</span>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Privacidad -->
+    <div id="privacy-modal" class="modal-overlay hidden">
+        <div class="modal-wrapper">
+            <div class="modal-card">
+                <h2 class="modal-title">Política de privacidad</h2>
+                <p class="modal-text">
+                    "La presente Política de Privacidad establece los términos en que Sistemas Eureka Mx usa y protege
+                    la
+                    información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía
+                    está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos
+                    de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se
+                    emplea de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede
+                    cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar
+                    continuamente esta página para asegurarse que está de acuerdo con dichos cambios."
+                </p>
+            </div>
+            <button id="close-modal-btn" class="modal-close-btn">X</button>
+        </div>
+    </div>
+
+    <!-- Scripts Globales -->
+    <script src="script.js"></script>
+
+    <!-- Botón Flotante -->
+    <a href="https://wa.me/526699947227" class="whatsapp-float" target="_blank">
+        <img src="Recursos/Contact_whatsapp logopng.png" alt="WhatsApp">
+    </a>
+
+    <!-- 
+    --- SCRIPT ESPECÍFICO DEL FORMULARIO --- 
+    Maneja el envío asíncrono a Formspree y muestra mensajes de éxito/error.
+    -->
+    <script>
+        // Referencias al DOM
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success');
+
+        if (form) {
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+
+                // Estado de "Cargando"
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
+
+                try {
+                    // Envío vía Fetch (AJAX)
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Éxito: Ocultar form y mostrar mensaje
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    } else {
+                        // Error del servidor: Usar mailto como respaldo
+                        fallbackToMailto();
+                    }
+                } catch (error) {
+                    // Error de red: Usar mailto como respaldo
+                    fallbackToMailto();
+                } finally {
+                    // Restaurar botón (si falló o si se volviera a intentar)
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // Función de respaldo: Abre el cliente de correo del usuario
+        function fallbackToMailto() {
+            const email = document.getElementById('user-email').value;
+            const message = document.getElementById('user-message').value;
+            const mailtoLink = `mailto:omar.tirado@eurekamx.com.mx?subject=Contacto desde Eureka Web&body=${encodeURIComponent(message)}%0A%0AContacto: ${encodeURIComponent(email)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+
+</html>

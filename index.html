@@ -4,31 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página principal -->
     <title>Eureka | Retail Business Intelligence</title>
+    <!-- Icono de la pestaña -->
     <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Top Bar -->
-
-
-    <!-- Navigation -->
+    <!-- 
+    --- SECCIÓN DE NAVEGACIÓN (HEADER) --- 
+    Contiene el logotipo, el menú de navegación principal y los botones de acción rápida.
+    -->
     <header>
         <div class="nav-container">
+            <!-- Logotipo y nombre de la marca (Enlace al inicio) -->
             <div class="logo">
                 <a href="index.html#top" style="display: flex; gap: 10px; text-decoration: none; align-items: center;">
                     <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo">
                     <span class="brand-name">EUREKA</span>
                 </a>
+                <!-- Botón 'Hamburguesa' para menú en móviles -->
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
+
+            <!-- Fondo oscuro al abrir menú móvil -->
             <div class="mobile-overlay"></div>
+
+            <!-- Menú de navegación principal -->
             <nav>
+                <!-- Botón para cerrar menú en móviles (Flecha atrás) -->
                 <button class="mobile-menu-back" aria-label="Cerrar menú">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -36,17 +46,37 @@
                     </svg>
                 </button>
                 <ul>
+                    <!-- Enlaces ancla a secciones de la página -->
                     <li><a href="#funcionamiento">Funcionamiento</a></li>
                     <li><a href="#why-eureka">Beneficios</a></li>
                     <li><a href="#software-promotoria">Promotoría</a></li>
                     <li><a href="#nuestros-servicios">Servicios</a></li>
-                    <li><a href="#contact-info">Contactos</a></li>
+
+                    <!-- Dropdown 'Contactos' (Solo visible en Computadora) -->
+                    <li class="nav-item-dropdown desktop-only">
+                        <button class="nav-dropdown-toggle">
+                            Contactos
+                            <span class="dropdown-icon">+</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#contact-info" class="dropdown-item">Nuestros datos</a>
+                            <a href="contacto.html" class="dropdown-item">Mandar correo</a>
+                        </div>
+                    </li>
+
+                    <!-- Opciones de contacto (Solo visibles en Móvil) -->
+                    <li class="mobile-nav-item"><a href="#contact-info">Nuestros datos</a></li>
+                    <li class="mobile-nav-item"><a href="contacto.html">Mandar correo</a></li>
+
+                    <!-- Botones extra para vista móvil -->
                     <li class="mobile-nav-buttons">
                         <a href="faq.html" class="btn-faq">FAQ</a>
                         <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
                     </li>
                 </ul>
             </nav>
+
+            <!-- Botones de acción rápida (FAQ y Login) en Desktop -->
             <div class="login-btn">
                 <a href="faq.html" class="btn-faq">FAQ</a>
                 <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
@@ -54,11 +84,15 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 
+    --- SECCIÓN HERO (PORTADA) --- 
+    Primera sección que ve el usuario. Mensaje principal y llamada a la acción.
+    -->
     <main>
         <section class="hero-container">
             <div class="hero-frame">
                 <div class="hero-inner">
+                    <!-- Texto Principal -->
                     <div class="hero-content">
                         <p class="hero-subtitle">CON INTELIGENCIA DE DATOS RETAIL</p>
                         <h1>Menos agotados.<br>Menos pérdidas.<br><span class="hero-highlight">Más control de
@@ -68,12 +102,13 @@
                             Eureka conecta ventas, inventarios y ejecución en tienda para que veas los problemas antes
                             de que impacten el resultado.
                         </p>
+                        <!-- Botones del Hero -->
                         <div class="hero-buttons">
-                            <a href="mailto:omar.tirado@eurekamx.com.mx?subject=Solicitud%20de%20Demo%20-%20Eureka&body=Hola%2C%0A%0AMe%20gustar%C3%ADa%20solicitar%20una%20demostraci%C3%B3n%20de%20la%20plataforma%20Eureka%20para%20mi%20negocio.%0A%0ASaludos"
-                                class="btn-white">Solicitar Demo</a>
+                            <a href="contacto.html" class="btn-white">Solicitar Demo</a>
                             <a href="#contact-info" class="btn-transparent">Contactos</a>
                         </div>
                     </div>
+                    <!-- Imagen de Portada -->
                     <div class="hero-image">
                         <img src="Recursos/Laptop_mockup.png" alt="Eureka App Devices">
                     </div>
@@ -82,7 +117,10 @@
         </section>
     </main>
 
-    <!-- How it Works Section -->
+    <!-- 
+    --- SECCIÓN: CÓMO FUNCIONA --- 
+    Explica los tres pilares de Eureka con acordeón interactivo.
+    -->
     <section id="funcionamiento" class="how-it-works">
         <div class="hiw-container">
             <h2 class="hiw-title">¿Cómo funciona Eureka?</h2>
@@ -93,9 +131,9 @@
             </p>
 
             <div class="accordion-section">
-                <!-- Left Column: Accordion -->
+                <!-- Columna Izquierda: Acordeón -->
                 <div class="accordion-container">
-                    <!-- Item 1 -->
+                    <!-- Ítem 1 -->
                     <div class="accordion-item">
                         <button class="accordion-header">
                             Información confiable, a tiempo
@@ -108,7 +146,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
+                    <!-- Ítem 2 -->
                     <div class="accordion-item">
                         <button class="accordion-header">
                             Indicadores que guían decisiones
@@ -121,7 +159,7 @@
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
+                    <!-- Ítem 3 -->
                     <div class="accordion-item">
                         <button class="accordion-header">
                             Ejecución y validación en tienda
@@ -135,7 +173,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Image -->
+                <!-- Columna Derecha: Imagen Ilustrativa -->
                 <div class="accordion-image">
                     <img src="Recursos/Laptop_BI_Mokcup.png" alt="Eureka BI Dashboard">
                 </div>
@@ -143,7 +181,10 @@
         </div>
     </section>
 
-    <!-- Why Eureka Section -->
+    <!-- 
+    --- SECCIÓN: BENEFICIOS (POR QUÉ EUREKA) --- 
+    Tarjetas numeradas que destacan las ventajas competitivas.
+    -->
     <section id="why-eureka" class="why-eureka">
         <div class="why-container">
             <h2 class="why-title">¿POR QUÉ NECESITAS<br>EUREKA?</h2>
@@ -154,35 +195,35 @@
             </p>
 
             <div class="why-grid">
-                <!-- Card 01 -->
+                <!-- Tarjeta 01 -->
                 <div class="why-card card-01">
                     <div class="card-number">01</div>
                     <h4>Incrementa ventas</h4>
                     <p>con datos precisos</p>
                 </div>
 
-                <!-- Card 02 -->
+                <!-- Tarjeta 02 -->
                 <div class="why-card card-02">
                     <div class="card-number">02</div>
                     <h4>Inventarios sanos</h4>
                     <p>con control total</p>
                 </div>
 
-                <!-- Card 03 -->
+                <!-- Tarjeta 03 -->
                 <div class="why-card card-03">
                     <div class="card-number">03</div>
                     <h4>Menos devoluciones</h4>
                     <p>y mejor gestión</p>
                 </div>
 
-                <!-- Card 04 -->
+                <!-- Tarjeta 04 -->
                 <div class="why-card card-04">
                     <div class="card-number">04</div>
                     <h4>Ahorra Tiempo</h4>
                     <p>con automatización</p>
                 </div>
 
-                <!-- Card 05 (Full width) -->
+                <!-- Tarjeta 05 (Ancho completo) -->
                 <div class="why-card card-05">
                     <div class="card-05-left">
                         <div class="card-number">05</div>
@@ -197,13 +238,17 @@
         </div>
     </section>
 
-    <!-- Software Promotoria Section -->
+    <!-- 
+    --- SECCIÓN: SOFTWARE DE PROMOTORÍA --- 
+    Carrusel interactivo para mostrar funciones de la app móvil.
+    -->
     <section id="software-promotoria" class="promo-section">
         <div class="promo-container">
             <h2 class="promo-title">Software para Promotoría</h2>
 
             <div class="promo-content">
-                <!-- Left: List (Desktop) -->
+                <!-- Lista de funciones (Vista Desktop) -->
+                <!-- Al dar click en estos botones, cambia la imagen derecha -->
                 <div class="promo-list">
                     <button class="promo-item active" data-title="Planificación de Rutas"
                         data-desc="Optimiza las rutas de visita para maximizar la eficiencia de tu equipo de promotoría."
@@ -247,9 +292,10 @@
                     </button>
                 </div>
 
-                <!-- Mobile: Swipeable Carousel -->
+                <!-- Carrusel Deslizable (Vista Móvil) -->
                 <div class="promo-carousel-wrapper">
                     <div class="promo-carousel" id="promo-carousel">
+                        <!-- Cada item representa una función con su imagen -->
                         <div class="promo-carousel-item active" data-index="0">
                             <div class="display-card">
                                 <div class="display-image-placeholder">
@@ -367,9 +413,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- Close promo-carousel -->
+                    </div> <!-- Cierre del carrusel -->
+
+                    <!-- Flechas de navegación del carrusel -->
                     <button class="carousel-arrow prev" aria-label="Previous Slide">❮</button>
                     <button class="carousel-arrow next" aria-label="Next Slide">❯</button>
+
+                    <!-- Puntos de navegación del carrusel -->
                     <div class="promo-carousel-dots">
                         <span class="carousel-dot active" data-index="0"></span>
                         <span class="carousel-dot" data-index="1"></span>
@@ -382,11 +432,10 @@
                     </div>
                 </div>
 
-                <!-- Right: Display (Desktop) -->
+                <!-- Imagen Derecha (Vista Desktop) -->
                 <div class="promo-display">
                     <div class="display-card">
                         <div class="display-image-placeholder">
-                            <!-- Image will be injected here via CSS/JS or just a placeholder div for now -->
                             <img id="promo-display-img" src="" alt="Functionality Preview" style="display:none;">
                             <div class="placeholder-box"></div>
                         </div>
@@ -401,7 +450,10 @@
         </div>
     </section>
 
-    <!-- Nuestros Servicios Section -->
+    <!-- 
+    --- SECCIÓN: NUESTROS SERVICIOS --- 
+    Detalle de servicios de BI y Promotoría en tarjetas.
+    -->
     <section id="nuestros-servicios" class="services-section">
         <div class="services-header">
             <h2 class="services-title">NUESTROS SERVICIOS</h2>
@@ -409,7 +461,7 @@
         </div>
 
         <div class="services-container">
-            <!-- Card 1: Blue Theme -->
+            <!-- Tarjeta 1: Tema Azul (Inteligencia de Negocios) -->
             <div class="service-card blue-theme">
                 <h4 class="service-heading">Inteligencia de<br>Negocios</h4>
                 <p class="service-desc">Análisis automatizado de ventas e inventarios de todas las cadenas comerciales
@@ -436,7 +488,7 @@
                 </ul>
             </div>
 
-            <!-- Card 2: Purple Theme -->
+            <!-- Tarjeta 2: Tema Púrpura (Software de Promotoría) -->
             <div class="service-card purple-theme">
                 <h4 class="service-heading">Software de<br>Promotoría</h4>
                 <p class="service-desc">Control total de rutas, inventarios y ventas en campo con nuestra aplicación
@@ -462,7 +514,10 @@
         </div>
     </section>
 
-    <!-- Slogan Section -->
+    <!-- 
+    --- SECCIÓN: SLOGAN Y CTA --- 
+    Llamada final a la acción con imagen de mockup.
+    -->
     <section id="slogan-cta" class="slogan-section">
         <div class="slogan-container">
             <h2 class="slogan-title">¿Quieres ver dónde estás perdiendo ventas hoy?</h2>
@@ -478,13 +533,17 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- 
+    --- SECCIÓN DE CONTACTO --- 
+    Formulario, botones de llamada y WhatsApp.
+    -->
     <section id="contact-info" class="contact-section">
         <div class="contact-header">
             <h2 class="contact-title">Háblanos de tu operación comercial</h2>
         </div>
         <div class="contact-card">
             <div class="contact-details">
+                <!-- Información de Email con botón de copiar -->
                 <div class="contact-item">
                     <h3>Email</h3>
                     <div class="copy-wrapper">
@@ -500,6 +559,7 @@
                         <span class="copy-feedback">Copied!</span>
                     </div>
                 </div>
+                <!-- Información de Teléfono con botón de copiar -->
                 <div class="contact-item">
                     <h3>Teléfono</h3>
                     <div class="copy-wrapper">
@@ -516,19 +576,23 @@
                     </div>
                 </div>
             </div>
+            <!-- Botones de Acción (Link a página de contacto, WhatsApp y Llamada) -->
             <div class="contact-actions">
-                <a href="mailto:omar.tirado@eurekamx.com.mx?subject=Solicitud%20de%20An%C3%A1lisis%20-%20Eureka&body=Hola,%0A%0AMe%20gustar%C3%ADa%20solicitar%20un%20an%C3%A1lisis%20de%20mi%20operaci%C3%B3n%20comercial.%0A%0ASaludos"
-                    class="action-btn primary">Solicitar análisis</a>
+                <a href="contacto.html" class="action-btn primary" id="contact-email-btn">Solicitar análisis</a>
                 <a href="https://wa.me/526699947227" class="action-btn primary custom-outline-btn"
                     target="_blank">WhatsApp</a>
                 <a href="tel:+526699947227" class="action-btn primary custom-outline-btn">Llamar</a>
             </div>
         </div>
     </section>
-    <!-- Footer -->
+
+    <!-- 
+    --- SECCIÓN FOOTER (PIE DE PÁGINA) --- 
+    Enlaces legales, contacto rápido y redes sociales.
+    -->
     <footer class="main-footer">
         <div class="footer-container">
-            <!-- Top Section: Links & Contact -->
+            <!-- Sección Superior: Enlaces -->
             <div class="footer-top">
                 <div class="footer-col">
                     <h4>Sobre nosotros</h4>
@@ -544,6 +608,7 @@
                         <li><a href="tel:+526699947227">+52 669 9947227</a></li>
                     </ul>
                 </div>
+                <!-- Redes Sociales -->
                 <div class="footer-col footer-social">
                     <a href="https://wa.me/526699947227" aria-label="WhatsApp" target="_blank"
                         style="margin-right: 10px;">
@@ -555,19 +620,22 @@
                 </div>
             </div>
 
-            <!-- Middle Section: BRAND -->
+            <!-- Marca en el Footer -->
             <div class="footer-brand">
                 <span>EUREKA</span>
             </div>
 
-            <!-- Bottom Section: Copyright -->
+            <!-- Copyright -->
             <div class="footer-bottom">
                 <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
+    <!-- 
+    --- MODALES Y ELEMENTOS FLOTANTES --- 
+    Ventana de Política de Privacidad y Botón de WhatsApp flotante.
+    -->
     <div id="privacy-modal" class="modal-overlay hidden">
         <div class="modal-wrapper">
             <div class="modal-card">
@@ -587,8 +655,10 @@
         </div>
     </div>
 
-
+    <!-- Script de lógica -->
     <script src="script.js"></script>
+
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/526699947227" class="whatsapp-float" target="_blank">
         <img src="Recursos/Contact_whatsapp logopng.png" alt="WhatsApp">
     </a>

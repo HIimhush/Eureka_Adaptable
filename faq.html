@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eureka | Preguntas Frecuentes</title>
+    <!-- Icono de pestaña -->
     <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Using same fonts as main site -->
+    <!-- Se usan las mismas fuentes que en el sitio principal -->
 </head>
 
 <body>
-    <!-- Top Bar -->
-
-
-    <!-- Navigation -->
+    <!-- 
+    --- SECCIÓN DE NAVEGACIÓN (HEADER) --- 
+    Idéntica a la página principal.
+    -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -41,7 +43,20 @@
                     <li><a href="index.html#why-eureka">Beneficios</a></li>
                     <li><a href="index.html#software-promotoria">Promotoría</a></li>
                     <li><a href="index.html#nuestros-servicios">Servicios</a></li>
-                    <li><a href="index.html#contact-info">Contactos</a></li>
+                    <!-- Dropdown 'Contactos' Desktop -->
+                    <li class="nav-item-dropdown desktop-only">
+                        <button class="nav-dropdown-toggle">
+                            Contactos
+                            <span class="dropdown-icon">+</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html#contact-info" class="dropdown-item">Nuestros datos</a>
+                            <a href="contacto.html" class="dropdown-item">Mandar correo</a>
+                        </div>
+                    </li>
+                    <!-- Opciones Moviles -->
+                    <li class="mobile-nav-item"><a href="index.html#contact-info">Nuestros datos</a></li>
+                    <li class="mobile-nav-item"><a href="contacto.html">Mandar correo</a></li>
                     <li class="mobile-nav-buttons">
                         <a href="faq.html" class="btn-faq active">FAQ</a>
                         <a href="login.html" class="btn-outline">Ingreso a Clientes</a>
@@ -55,21 +70,25 @@
         </div>
     </header>
 
+    <!-- 
+    --- CONTENIDO PRINCIPAL: PREGUNTAS FRECUENTES --- 
+    Grid de dos columnas: Izquierda (Preguntas) / Derecha (CTA)
+    -->
     <main class="faq-page-main">
         <section class="faq-content-wrapper">
 
-            <!-- Page Title -->
+            <!-- Título de la Página -->
             <div class="faq-page-header">
                 <h1 class="faq-main-title">Preguntas Frecuentes</h1>
-                <!-- Simple decorative shape if needed via CSS -->
+                <!-- Elemento decorativo visual -->
                 <div class="faq-deco-shape"></div>
             </div>
 
             <div class="faq-grid">
-                <!-- Left Column: Questions -->
+                <!-- Columna Izquierda: Lista de Preguntas -->
                 <div class="faq-questions-col">
 
-                    <!-- Question 1 -->
+                    <!-- Pregunta 1 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Eureka es solo un sistema de reportes?</span>
@@ -83,7 +102,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 2 -->
+                    <!-- Pregunta 2 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿En qué se diferencia Eureka de los portales de las cadenas?</span>
@@ -97,7 +116,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 3 -->
+                    <!-- Pregunta 3 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Necesito cambiar mis procesos o sistemas actuales?</span>
@@ -110,7 +129,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 4 -->
+                    <!-- Pregunta 4 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Para quién está pensado Eureka?</span>
@@ -124,7 +143,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 5 -->
+                    <!-- Pregunta 5 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Qué tipo de resultados puedo esperar?</span>
@@ -139,7 +158,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 6 -->
+                    <!-- Pregunta 6 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Eureka incluye promotoría?</span>
@@ -152,7 +171,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 7 -->
+                    <!-- Pregunta 7 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Cuánto tiempo toma empezar a ver información?</span>
@@ -165,7 +184,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 8 -->
+                    <!-- Pregunta 8 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Hay contratos forzosos o compromisos a largo plazo?</span>
@@ -177,7 +196,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 9 -->
+                    <!-- Pregunta 9 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Eureka reemplaza al análisis humano?</span>
@@ -189,7 +208,7 @@
                         </div>
                     </div>
 
-                    <!-- Question 10 -->
+                    <!-- Pregunta 10 -->
                     <div class="faq-card">
                         <button class="faq-toggle">
                             <span>¿Por qué debería probar Eureka ahora?</span>
@@ -203,11 +222,11 @@
 
                 </div>
 
-                <!-- Right Column: CTA -->
+                <!-- Columna Derecha: CTA (Llamada a la acción) -->
                 <div class="faq-cta-col">
                     <div class="faq-cta-card">
                         <div class="faq-cta-icon">
-                            <!-- Simple chat bubble icon -->
+                            <!-- Icono simple de burbuja de chat -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="#000"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -217,8 +236,7 @@
                         <h3>¿Tienes más preguntas?</h3>
                         <p>Nuestro equipo está listo para ayudarte con cualquier duda específica que tengas sobre la
                             plataforma.</p>
-                        <a href="mailto:omar.tirado@eurekamx.com.mx?subject=Duda%20sobre%20Eureka&body=Hola%2C%0A%0ATengo%20algunas%20dudas%20sobre%20la%20plataforma%20Eureka%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20al%20respecto.%0A%0ASaludos"
-                            class="btn-direct-mail">Enviar Correo Directo</a>
+                        <a href="contacto.html" class="btn-direct-mail">Enviar Correo Directo</a>
                     </div>
                 </div>
             </div>
@@ -226,10 +244,13 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- 
+    --- FOOTER --- 
+    Pie de página estándar.
+    -->
     <footer class="main-footer">
         <div class="footer-container">
-            <!-- Top Section: Links & Contact -->
+            <!-- Sección Superior -->
             <div class="footer-top">
                 <div class="footer-col">
                     <h4>Sobre nosotros</h4>
@@ -255,19 +276,19 @@
                 </div>
             </div>
 
-            <!-- Middle Section: BRAND -->
+            <!-- Marca -->
             <div class="footer-brand">
                 <span>EUREKA</span>
             </div>
 
-            <!-- Bottom Section: Copyright -->
+            <!-- Copyright -->
             <div class="footer-bottom">
                 <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
+    <!-- Modal de Política de Privacidad -->
     <div id="privacy-modal" class="modal-overlay hidden">
         <div class="modal-wrapper">
             <div class="modal-card">
@@ -287,7 +308,10 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+
+    <!-- Botón Flotante WhatsApp -->
     <a href="https://wa.me/526699947227" class="whatsapp-float" target="_blank">
         <img src="Recursos/Contact_whatsapp logopng.png" alt="WhatsApp">
     </a>

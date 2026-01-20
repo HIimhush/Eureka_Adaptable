@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eureka | Ingreso a Clientes</title>
+    <!-- Icono de pestaña -->
     <link rel="icon" href="Recursos/Eureka_Logo.svg" type="image/svg+xml">
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="login-page-body">
 
-    <!-- Navigation -->
+    <!-- 
+    --- SECCIÓN DE NAVEGACIÓN (HEADER) --- 
+    Idéntica a la página principal.
+    -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -32,7 +37,20 @@
                     <li><a href="index.html#why-eureka">Beneficios</a></li>
                     <li><a href="index.html#software-promotoria">Promotoría</a></li>
                     <li><a href="index.html#nuestros-servicios">Servicios</a></li>
-                    <li><a href="index.html#contact-info">Contactos</a></li>
+                    <!-- Dropdown 'Contactos' Desktop -->
+                    <li class="nav-item-dropdown desktop-only">
+                        <button class="nav-dropdown-toggle">
+                            Contactos
+                            <span class="dropdown-icon">+</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html#contact-info" class="dropdown-item">Nuestros datos</a>
+                            <a href="contacto.html" class="dropdown-item">Mandar correo</a>
+                        </div>
+                    </li>
+                    <!-- Opciones Móviles -->
+                    <li class="mobile-nav-item"><a href="index.html#contact-info">Nuestros datos</a></li>
+                    <li class="mobile-nav-item"><a href="contacto.html">Mandar correo</a></li>
                     <li class="mobile-nav-buttons">
                         <a href="faq.html" class="btn-faq">FAQ</a>
                         <a href="login.html" class="btn-outline active" style="background-color: #f0f4ff;">Ingreso a
@@ -48,28 +66,33 @@
         </div>
     </header>
 
+    <!-- 
+    --- CONTENIDO PRINCIPAL: LOGIN --- 
+    Tarjeta de inicio de sesión dividida (Imagen Izquierda / Formulario Derecha).
+    -->
     <main class="login-main-section">
         <div class="login-card">
-            <!-- Left Column: Image -->
+            <!-- Columna Izquierda: Imagen decorativa -->
             <div class="login-image-col">
                 <img src="Recursos/Login_Mockup.jpg" alt="User working on Laptop">
             </div>
 
-            <!-- Right Column: Form -->
+            <!-- Columna Derecha: Formulario -->
             <div class="login-form-col">
                 <div class="login-logo">
-                    <!-- Using SVG or PNG logo -->
+                    <!-- Logotipo -->
                     <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo" class="login-logo-img">
                     <span class="login-brand-name">EUREKA</span>
                 </div>
 
                 <h2 class="login-title">Código de Cliente</h2>
 
+                <!-- Formulario -->
                 <form class="login-form">
                     <input type="text" placeholder="Ingresar código cliente" class="login-input">
 
                     <button type="submit" class="btn-sign-in">
-                        <!-- Google 'G' logo placeholder -->
+                        <!-- Icono G de Google -->
                         <span class="google-icon-wrapper">
                             <img src="Recursos/google logo.png" alt="G">
                         </span>
@@ -84,10 +107,13 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- 
+    --- FOOTER --- 
+    Pie de página estándar.
+    -->
     <footer class="main-footer">
         <div class="footer-container">
-            <!-- Top Section: Links & Contact -->
+            <!-- Sección Superior -->
             <div class="footer-top">
                 <div class="footer-col">
                     <h4>Sobre nosotros</h4>
@@ -113,19 +139,22 @@
                 </div>
             </div>
 
-            <!-- Middle Section: BRAND -->
+            <!-- Marca -->
             <div class="footer-brand">
                 <span>EUREKA</span>
             </div>
 
-            <!-- Bottom Section: Copyright -->
+            <!-- Copyright -->
             <div class="footer-bottom">
                 <p>Eurekamx 2021-2026, Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+
+    <!-- Botón Flotante WhatsApp -->
     <a href="https://wa.me/526699947227" class="whatsapp-float" target="_blank">
         <img src="Recursos/Contact_whatsapp logopng.png" alt="WhatsApp">
     </a>
