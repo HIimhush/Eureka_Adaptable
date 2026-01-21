@@ -135,8 +135,8 @@ header.nav-hidden {
     font-family: 'ZT Nature', sans-serif;
     font-weight: 900;
     font-size: 1.8rem;
-    color: #08121d;
-    text-transform: uppercase;
+    color: #0a2f58;
+    text-transform: capitalize;
 }
 
 nav ul {
@@ -333,17 +333,17 @@ main {
 
 /* Hero Content (Left) */
 .hero-content {
-    flex: 1.2;
+    flex: 1.4;
     max-width: 100%;
     z-index: 1;
 }
 
 .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.0 rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 16px;
-    color: #bfdbfe;
+    margin-bottom: 14px;
+    color: #d0e2f8;
     /* Light blue */
     font-weight: bold;
 }
@@ -368,7 +368,7 @@ h1 {
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 30px;
     max-width: 90%;
@@ -944,174 +944,122 @@ h1 {
 }
 
 .hiw-subtitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #4a5568;
-    max-width: 1000px;
+    max-width: 800px;
     /* Increased to reduce lines */
     margin: 0 auto 50px;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
-/* Accordion Section */
-.accordion-section {
+/* -----------------------------------------------------------------------------
+   --- SECCIÓN DE PASOS (GRID) ---
+   La distribución en 3 columnas
+   ----------------------------------------------------------------------------- */
+.steps-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Align to center */
-    gap: 10%;
-    /* Space between columns */
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-    /* Reset alignment */
+    justify-content: center;
+    gap: 23px;
+    /* Condensed gap */
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    /* Force single row on desktop */
+    width: 100%;
 }
 
-.accordion-container {
+.step-card {
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16);
+    /* Lighter initial shadow */
     flex: 1;
-    /* Takes remaining space */
-    max-width: 55%;
-    /* Limit width of accordion column */
+    min-width: 0;
+    /* Allow shrinking below content size if needed, prevents overflow */
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.8s ease;
+    overflow: hidden;
+    /* Ensures header corners clip */
+    border: 1px solid #e5e7eb;
+    /* Subtle border */
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-.accordion-item {
-    border-radius: 12px;
-    /* Squarer shape */
-    overflow: hidden;
-    background-color: white;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+.step-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.19);
 }
 
-.accordion-header {
-    width: 100%;
-    padding: 20px 30px;
-    color: white;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    text-align: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
+/* Header Sections with specific colors */
+.step-header {
+    padding: 25px 25px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    /* Align top in case text wraps */
+}
+
+/* Color Logic with Gradients */
+.step-card:nth-child(1) .step-header {
+    background: linear-gradient(135deg, #094172 0%, #1d84e5 100%);
+    /* Dark Blue Gradient */
+}
+
+.step-card:nth-child(2) .step-header {
+    background: linear-gradient(135deg, #1d84e5 0%, #19467c 100%);
+    /* Medium Blue Gradient */
+}
+
+.step-card:nth-child(3) .step-header {
+    background: linear-gradient(135deg, #19467c 0%, #3a7fd3 100%);
+    /* Light Blue/Cyan Gradient */
+}
+
+/* Title Styling */
+.step-title {
     font-family: 'ZT Nature', sans-serif;
-    border-radius: 12px;
-    /* Match item radius */
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-/* Specific Header Colors matching previous design/image */
-.accordion-item:nth-child(1) .accordion-header {
-    background-color: #0f4c81;
-    /* Dark Blue */
-}
-
-.accordion-item:nth-child(2) .accordion-header {
-    background-color: #3b82f6;
-    /* Medium Blue */
-}
-
-.accordion-item:nth-child(3) .accordion-header {
-    background-color: #38bdf8;
-    /* Light Blue/Cyan */
-}
-
-/* Triangle Icon */
-.accordion-icon {
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 10px solid white;
-    /* Right pointing triangle */
-    transition: transform 0.4s ease;
-}
-
-/* Rotate icon when active */
-.accordion-header.active .accordion-icon {
-    transform: rotate(90deg);
-    /* Points down */
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    /* Single push: animate max-height AND padding together */
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: white;
-    padding: 0 30px;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-/* Show content when active */
-.accordion-header.active+.accordion-content {
-    /* Max-height set by JS */
-    padding-top: 15px;
-    padding-bottom: 20px;
-}
-
-.accordion-content p {
-    color: #1a202c;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-    font-weight: italic;
-}
-
-.accordion-content u {
-    text-decoration: none;
+    font-size: 1.1rem;
     font-weight: 800;
-}
-
-/* Image Column */
-.accordion-image {
+    color: white;
+    /* White text on color headers */
+    line-height: 1.2;
+    margin-bottom: 0;
+    text-transform: capitalize;
     flex: 1;
-    max-width: 90%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 30px;
+    text-align: center;
+
 }
 
-.accordion-image img {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
-    /* Tilt slightly left and move UP 10px */
-    transform: rotate(-3deg) scale(1.6) translateY(-10px);
-    transition: transform 0.6s ease-out;
-    /* Match smoother feel */
+
+/* Body Styling */
+.step-body {
+    background-color: white;
+    padding: 30px 25px;
+    flex: 1;
+    /* Fills remaining height if needed */
 }
 
-.accordion-image img:hover {
-    /* Interactive hover effect - keep the translateY tweak */
-    transform: rotate(0deg) scale(1.3) translateY(-10px);
+.step-desc {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    font-style: italic;
+    color: #374151;
+    /* Dark grey text */
+    line-height: 1.2;
+    text-align: center;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .accordion-section {
+@media (max-width: 900px) {
+    .steps-grid {
         flex-direction: column;
         align-items: center;
     }
 
-    .accordion-container,
-    .accordion-image {
-        max-width: 100%;
+    .step-card {
         width: 100%;
-    }
-
-    .accordion-image {
-        margin-top: 40px;
+        max-width: 500px;
     }
 }
 
@@ -1120,14 +1068,14 @@ h1 {
    Tarjetas con puntos clave de valor.
    ----------------------------------------------------------------------------- */
 .why-eureka {
-    background-color: #F8FAFC;
-    padding: 80px 20px;
+    background-color: #ecf6ff;
+    padding: 35px 20px;
     /* Reduced padding */
     text-align: center;
 }
 
 .why-container {
-    max-width: 900px;
+    max-width: 800px;
     /* Condensed width */
     margin: 0 auto;
 }
@@ -1137,7 +1085,7 @@ h1 {
     /* Reduced from 3rem */
     font-weight: 900;
     margin-bottom: 15px;
-    color: #000;
+    color: #183454;
     font-family: 'ZT Nature', sans-serif;
     line-height: 1.1;
     text-transform: uppercase;
@@ -1639,7 +1587,7 @@ img[src*="Accesos por GPS"] {
 }
 
 .services-title {
-    font-size: 3.2rem;
+    font-size: 2.9rem;
     font-family: 'ZT Nature', sans-serif;
     font-weight: 900;
     /* Black for Big Header */
@@ -1647,6 +1595,7 @@ img[src*="Accesos por GPS"] {
     /* Deep blue */
     text-transform: uppercase;
     margin-bottom: 13px;
+    margin-top: 5px;
 }
 
 .services-subtitle {
@@ -1811,7 +1760,7 @@ img[src*="Accesos por GPS"] {
    Llamada a la acción final antes del pie de página.
    ----------------------------------------------------------------------------- */
 .slogan-section {
-    background: linear-gradient(180deg, #e2effd 0%, #b5dbfe 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #b5dbfe 100%);
     padding: 80px 20px 0;
     /* No bottom padding so image sits on bottom */
     text-align: center;
@@ -2118,12 +2067,12 @@ img[src*="Accesos por GPS"] {
    ----------------------------------------------------------------------------- */
 
 .contact-page-main {
-    min-height: 100vh;
-    background-color: #fff;
+    min-height: 86vh;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 10px 10px;
 }
 
 .contact-page-container {
@@ -2267,6 +2216,23 @@ img[src*="Accesos por GPS"] {
     font-weight: 600;
     font-family: 'Helvetica', sans-serif;
     margin: 0;
+}
+
+.btn-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #162a60;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: 'Helvetica', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #5c6fad;
 }
 
 /* Contact Page Mobile */
@@ -2424,6 +2390,7 @@ img[src*="Accesos por GPS"] {
     line-height: 1;
     display: block;
     margin-left: -5px;
+    text-transform: capitalize;
     /* Visual optical alignment */
 }
 

@@ -21,7 +21,7 @@
             <div class="logo">
                 <a href="index.html#top" style="display: flex; gap: 10px; text-decoration: none; align-items: center;">
                     <img src="Recursos/Logo_Eureka.png" alt="Eureka Logo">
-                    <span class="brand-name">EUREKA</span>
+                    <span class="brand-name">Eureka</span>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <span></span>
@@ -77,7 +77,7 @@
         <div class="contact-page-container">
             <!-- Columna Izquierda: Imagen decorativa -->
             <div class="contact-page-graphic">
-                <img src="Recursos/Email_deco.png" alt="Eureka Contact" class="contact-logo-img">
+                <img src="Recursos/Email_deco.jpg" alt="Eureka Contact" class="contact-logo-img">
             </div>
 
             <!-- Columna Derecha: Formulario -->
@@ -110,6 +110,7 @@
                 <!-- Mensaje de éxito (Oculto por defecto) -->
                 <div id="form-success" class="form-success-message" style="display: none;">
                     <p>¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.</p>
+                    <a href="index.html" class="btn-home">Volver a inicio</a>
                 </div>
             </div>
         </div>
@@ -150,7 +151,7 @@
 
             <!-- Marca -->
             <div class="footer-brand">
-                <span>EUREKA</span>
+                <span>Eureka</span>
             </div>
 
             <!-- Copyright -->
@@ -209,6 +210,19 @@
                 submitBtn.textContent = 'Enviando...';
                 submitBtn.disabled = true;
 
+                // Check for testing email
+                const emailInput = document.getElementById('user-email');
+                if (emailInput.value.trim() === 'TEST$') {
+                    // Simulate a short delay for realism
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        submitBtn.textContent = originalBtnText;
+                        submitBtn.disabled = false;
+                    }, 500);
+                    return; // Stop execution here, do NOT send to Formspree
+                }
+
                 try {
                     // Envío vía Fetch (AJAX)
                     const response = await fetch(form.action, {
@@ -231,9 +245,11 @@
                     // Error de red: Usar mailto como respaldo
                     fallbackToMailto();
                 } finally {
-                    // Restaurar botón (si falló o si se volviera a intentar)
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
+                    if (emailInput.value.trim() !== 'TEST$') {
+                        // Restaurar botón (si falló o si se volviera a intentar)
+                        submitBtn.textContent = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
                 }
             });
         }

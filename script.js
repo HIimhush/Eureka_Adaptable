@@ -118,30 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // -------------------------------------------------------------------------
     // --- ACORDEÓN (QUÉ ES EUREKA) ---
-    // Expande y contrae las secciones informativas en la página principal.
+    // ELIMINADO: Se reemplazó por diseño estático de tarjetas.
     // -------------------------------------------------------------------------
-    const accHeaders = document.querySelectorAll('.accordion-header');
 
-    accHeaders.forEach(header => {
-        header.addEventListener('click', function () {
-            // Cierra otros ítems abiertos para mantener limpieza
-            const currentlyActive = document.querySelector('.accordion-header.active');
-            if (currentlyActive && currentlyActive !== header) {
-                currentlyActive.classList.remove('active');
-                currentlyActive.nextElementSibling.style.maxHeight = null;
-            }
-
-            // Alterna el ítem actual
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            if (this.classList.contains('active')) {
-                // Asigna altura dinámica basada en el contenido
-                content.style.maxHeight = (content.scrollHeight + 40) + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
-    });
 
     // -------------------------------------------------------------------------
     // --- SECCIÓN PROMOTORÍA: CARRUSEL Y DISPLAY ---
