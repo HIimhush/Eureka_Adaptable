@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const val = input.value.trim().toLowerCase();
 
             if (val === 'demo') {
-                window.location.href = '404.html';
+                window.location.href = 'index.html';
             } else {
                 alert('Código no válido. Intenta "demo"');
             }

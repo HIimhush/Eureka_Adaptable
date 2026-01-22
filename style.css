@@ -1,12 +1,9 @@
-/* -----------------------------------------------------------------------------
-   --- FUENTES Y ESTILOS GLOBALES ---
-   Definición de tipografías y variables base.
-   ----------------------------------------------------------------------------- */
+/* Global Styles & Typography */
 @font-face {
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-Regular.ttf') format('truetype');
     font-weight: 400;
-    /* Regular */
+
     font-style: normal;
 }
 
@@ -14,7 +11,7 @@
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-Medium.ttf') format('truetype');
     font-weight: 500;
-    /* Medium */
+
     font-style: normal;
 }
 
@@ -22,7 +19,7 @@
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-SemiBold.ttf') format('truetype');
     font-weight: 600;
-    /* SemiBold */
+
     font-style: normal;
 }
 
@@ -30,7 +27,7 @@
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-Bold.ttf') format('truetype');
     font-weight: 700;
-    /* Bold */
+
     font-style: normal;
 }
 
@@ -38,7 +35,7 @@
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-ExtraBold.ttf') format('truetype');
     font-weight: 800;
-    /* ExtraBold */
+
     font-style: normal;
 }
 
@@ -46,7 +43,7 @@
     font-family: 'ZT Nature';
     src: url('FONTS/ZT_nature/ZT Nature - TT/ZTNature-Black.ttf') format('truetype');
     font-weight: 900;
-    /* Black */
+
     font-style: normal;
 }
 
@@ -64,18 +61,9 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'ZT Nature', sans-serif;
-    color: #333;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-}
 
 
-/* -----------------------------------------------------------------------------
-   --- HEADER Y NAVEGACIÓN ---
-   Estilos de la barra superior, menú y logotipos.
-   ----------------------------------------------------------------------------- */
+/* Navigation & Header */
 header {
     background-color: rgb(255, 255, 255);
     padding: 40px 45px;
@@ -84,7 +72,7 @@ header {
     z-index: 1000;
     transition: transform 0.6s ease-in-out;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
-    /* Thicker bar with more prominent shadow */
+
 }
 
 header.nav-hidden {
@@ -130,7 +118,7 @@ header.nav-hidden {
     width: auto;
 }
 
-/* Kept brand name as ZT Nature if not specified otherwise, usually logos stay branded */
+
 .brand-name {
     font-family: 'ZT Nature', sans-serif;
     font-weight: 900;
@@ -149,7 +137,7 @@ nav ul {
 /* Dropdown Support */
 .nav-item-dropdown {
     position: relative;
-    /* Removed padding/margin hacks */
+
 }
 
 .nav-dropdown-toggle {
@@ -172,7 +160,7 @@ nav ul {
     line-height: 1;
     transition: transform 0.5s ease;
     margin-top: -2px;
-    /* Visual alignment fix for '+' character */
+    margin-top: -2px;
 }
 
 .nav-item-dropdown.active .dropdown-icon {
@@ -291,13 +279,10 @@ nav a {
     background-color: #becfff;
 }
 
-/* -----------------------------------------------------------------------------
-   --- SECCIÓN: HERO (PORTADA) ---
-   Estilos para el banner principal del sitio.
-   ----------------------------------------------------------------------------- */
+/* Hero Section */
 main {
     padding: 0;
-    /* Removed padding to allow full width */
+    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -333,8 +318,9 @@ main {
 
 /* Hero Content (Left) */
 .hero-content {
-    flex: 1.4;
-    max-width: 100%;
+    color: #f5f7fa;
+    flex: 1.5;
+    max-width: 120%;
     z-index: 1;
 }
 
@@ -344,27 +330,22 @@ main {
     text-transform: uppercase;
     margin-bottom: 14px;
     color: #d0e2f8;
-    /* Light blue */
     font-weight: bold;
 }
 
 h1 {
-    font-size: 3.1rem;
-    /* Reduced from 4rem */
-    line-height: 1.1;
+    font-family: 'ZT Nature', sans-serif;
+    font-size: 2.89rem;
+    line-height: 1.0;
     margin-bottom: 20px;
-    font-weight: 900;
-    /* Extra bold */
+    font-weight: 700;
     color: white;
-    max-width: 100%;
-    /* Make it more compact */
+    max-width: 110%;
 }
 
 .text-blue {
     color: #93c5fd;
-    /* Lighter blue highlight */
     display: block;
-    /* Make it stack if needed, or inline */
 }
 
 .hero-description {
@@ -376,9 +357,7 @@ h1 {
     /* Off-white for better readability */
 }
 
-/* =========================================
-   NEW FAQ REDESIGN Styles
-   ========================================= */
+/* FAQ Section */
 
 .faq-page-main {
     background-color: #e4eaef;
@@ -567,9 +546,7 @@ h1 {
     background-color: #78c3de;
 }
 
-/* =========================================
-   LOGIN PAGE STYLES
-   ========================================= */
+/* Login Page */
 
 .login-page-body {
     /* Reset body specific styles since layout is now standard */
@@ -3329,22 +3306,7 @@ img[src*="Accesos por GPS"] {
     }
 }
 
-/* 404 Page Mobile */
-@media (max-width: 768px) {
-    .error-page {
-        padding: 20px;
-    }
 
-    .error-image {
-        max-width: 50%;
-        margin-bottom: 15px;
-    }
-
-    .error-text {
-        font-size: 2.5rem;
-        letter-spacing: -1px;
-    }
-}
 
 /* Modal Mobile */
 @media (max-width: 768px) {
